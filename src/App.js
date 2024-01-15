@@ -11,9 +11,9 @@ function App() {
       <Header />
       <Routes>
         <Route exact path="/" element={<Menu />} />
-        <Route exact path="/gallery" element={<Gallery />} />
-        <Route exact path="/about" element={<About />} />
-        <Route exact path="/cart" element={<Cart />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </div>
   );
