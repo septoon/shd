@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       backgroundImage: theme => ({
         'shd': "url('./assets/img/bg-shd.jpg')",
+        'menu': "url('./assets/img/menu-icon4.png')"
       })
     },
     colors: {
@@ -20,6 +21,7 @@ module.exports = {
       'silver': '#ecebff',
       'bubble-gum': '#ff77e9',
       'bermuda': '#78dcca',
+      'orange': '#FFA500',
     }
   },
   plugins: [],
