@@ -120,7 +120,6 @@ const Cart = () => {
                       />
                     );
                   })}
-                  } ) }
                 </div>
                 <div className="cart__bottom">
                   <div className="cart__bottom-details">

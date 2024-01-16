@@ -9,9 +9,10 @@ import { NavLink } from "react-router-dom";
 const Menu = ({item}) => {
   const dispatch = useDispatch()
   
-  const { isActive, totalCount } = useSelector(({ catalogPage, cart }) => ({
+  const { isActive, totalCount, items } = useSelector(({ catalogPage, cart }) => ({
     isActive: catalogPage.isActive,
     totalCount: cart.totalCount,
+    items: cart.items
   }))
 
   const addDishToCart = (obj) => {
@@ -24,9 +25,13 @@ const Menu = ({item}) => {
           <MenuItem {...i} key={i.id} onClickAddDish={addDishToCart} toggleIsActive={toggleIsActive} isActive={isActive} />
           ))}
       </div>
-      <NavLink to='/cart' className='w-20 h-12 animate-pulse rounded-md bg-white shadow-xl bg-cover bg-center fixed bottom-6 left-6'>
-          В корзине {totalCount} шт.
-      </NavLink>
+      {
+        items.length > 0 && (
+          <NavLink to='/cart' className='w-20 h-12 animate-pulse rounded-md bg-white shadow-xl bg-cover bg-center fixed bottom-6 left-6'>
+              В корзине {totalCount} шт.
+          </NavLink>
+        )
+      }
     </div>
   );
 };
