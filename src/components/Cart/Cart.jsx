@@ -13,7 +13,7 @@ const Cart = () => {
     totalCount: cart.totalCount,
   }));
 
-  console.log(items)
+  console.log(items);
 
   const backBtnClassName = items.length ? 'cart_back_btn' : 'cart_back_btn empty';
 
@@ -52,37 +52,37 @@ const Cart = () => {
     <div className="cart_wrapper">
       <div className="content">
         <div className="container container--cart">
-          {isOrder && (
-            <div></div>
-          )}
+          {isOrder && <div></div>}
           <div className="cart">
             {items.length ? (
               // Если в корзине что-то есть
               <>
                 <div className="cart__top">
-                  <h2 className="content__title">
-                    {' '}
-                    Корзина
-                  </h2>
+                  <h2 className="content__title"> Корзина</h2>
                   <div
                     className="cart__clear"
                     onClick={() => {
                       let popup = window.confirm('Вы уверены, что хотите очистить корзину?');
                       popup && dispatch(clearDishCartAC());
                     }}>
-                    <img src='' alt="trash" />
+                    <img src="" alt="trash" />
                     <span>Очистить корзину</span>
                   </div>
                 </div>
                 <div className="content__items">
-                  {uniqueProducts.map((item, index) => (
-                     <CartItem
-                     key={index}
-                     onClickRemoveDish={onClickRemoveDish}
-                     {...item}
-                   />
-                  ) )
-                  }
+                  {uniqueProducts.map((item, index) => {
+                    const count = countById(items, item.id, item.activeSize);
+
+                    return (
+                      <CartItem
+                        key={index}
+                        countById={count}
+                        onClickRemoveDish={onClickRemoveDish}
+                        {...item}
+                      />
+                    );
+                  })}
+                  } ) }
                 </div>
                 <div className="cart__bottom">
                   <div className="cart__bottom-details">
@@ -96,7 +96,7 @@ const Cart = () => {
                     </span>
                   </div>
                   <div className="cart__bottom-buttons">
-                    <NavLink to="/shd" className="cart_bottom" >
+                    <NavLink to="/shd" className="cart_bottom">
                       <button className={backBtnClassName}>Вернуться назад</button>
                     </NavLink>
                     <div className="button pay-btn cart_bottom">
@@ -112,10 +112,10 @@ const Cart = () => {
               <div className="empty_cart">
                 <h2>Корзина пустая</h2>
                 <p>
-                  Вероятней всего, вы еще ничего не заказали. Для того, чтобы сделать заказ,
-                  перейди на страницу меню.
+                  Вероятней всего, вы еще ничего не заказали. Для того, чтобы сделать заказ, перейди
+                  на страницу меню.
                 </p>
-                <img src='' alt="empty-cart-logo" className="empty-cart-logo" />
+                <img src="" alt="empty-cart-logo" className="empty-cart-logo" />
 
                 <NavLink to="/shd" className="cart_back_btn_wrapper">
                   <button className={backBtnClassName}>Вернуться назад</button>

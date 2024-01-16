@@ -4,36 +4,37 @@ const CartItem = ({
   id,
   image,
   name,
-  activeSize,
+  serving,
   price,
   count,
-  onClickRemovePizza,
+  countById,
+  onClickRemoveDish,
 }) => {
   
-  const onRemovePizza = () => {
-    const pizzaObj = {
-      pizzaId: id,
-      pizzaSize: activeSize,
+  const onRemoveDish = () => {
+    const dishObj = {
+      dishId: id,
+      serving: serving,
     };
-    onClickRemovePizza(pizzaObj);
+    onClickRemoveDish(dishObj);
   };
   return (
     <div className="cart__item">
       <div className="cart__item-img">
-        <img className="pizza-block__image" src="" alt={name} />
+        <img className="pizza-block__image" src="" alt="картинка" />
       </div>
       <div className="cart__item-info">
         <h3>{name}</h3>
-        <p>{activeSize}</p>
+        <p>{serving}</p>
       </div>
       <div className="cart__item-count">
-        <b>{count}шт.</b>
+        <b>{countById}шт.</b>
       </div>
       <div className="cart__item-price">
         <b>{price}₽</b>
       </div>
       <div className="cart__item-remove">
-        <div className="button button--outline button--circle" onClick={onRemovePizza}>
+        <div className="button button--outline button--circle" onClick={onRemoveDish}>
           <img src='' className="close-cart svg" alt="closeCart" />
         </div>
       </div>
