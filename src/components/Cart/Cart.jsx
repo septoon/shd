@@ -3,6 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { clearDishCartAC, removeDishAC } from '../../redux/cart-reducer';
 import CartItem from './CartItem';
+import Form from './Form';
+
+import axios from 'axios';
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -12,8 +15,6 @@ const Cart = () => {
     totalPrice: cart.totalPrice,
     totalCount: cart.totalCount,
   }));
-
-  console.log(items);
 
   const backBtnClassName = items.length ? 'cart_back_btn' : 'cart_back_btn empty';
 
@@ -48,11 +49,51 @@ const Cart = () => {
   const onClickClearCart = () => {
     dispatch(clearDishCartAC());
   };
+
+  const ordersCount = Math.floor(Math.random() * 99999999)
+
+  const sendOrder = async (orderType, address, phoneNumber, comment, pizzas, pay) => {
+    let message = `
+    Заказ # ${ordersCount}
+    ${orderType}
+    ${pizzas.toString()}
+    Сумма: ${totalPrice}
+    Адрес Доставки: ${address}
+    Номер телефона: ${phoneNumber}
+    Комментарий: ${comment}
+    Способ оплаты: ${pay}
+          `
+    await axios
+      .post(
+        'https://api.telegram.org/bot6449386041:AAGzqG0r-R9AJFcY0EeV0vv6XBjFNDx_7xE/sendMessage',
+        {
+          chat_id: '-1001929441485',
+          text: message,
+        },
+      )
+      .then((res) => {
+        onClickClearCart();
+      })
+      .catch((err) => {
+        console.warn(err);
+      });
+  };
   return (
     <div className="cart_wrapper">
       <div className="content">
         <div className="container container--cart">
-          {isOrder && <div></div>}
+          {isOrder && (
+            <Form
+              setIsOrder={setIsOrder}
+              onClickClearCart={onClickClearCart}
+              countById={countById}
+              totalItems={items}
+              items={uniqueProducts}
+              totalCount={totalCount}
+              totalPrice={totalPrice}
+              sendOrder={sendOrder}
+            />
+          )}
           <div className="cart">
             {items.length ? (
               // Если в корзине что-то есть
