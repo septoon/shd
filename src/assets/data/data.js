@@ -36,7 +36,7 @@ export const data = {
       image: "",
       name: "Индейка в лаваше",
       serving: "2 шт",
-      price: 4700,
+      price: 470,
       isChange: false, 
       id: 4
     },

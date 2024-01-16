@@ -63,18 +63,15 @@ const Cart = () => {
     Комментарий: ${comment}
     Способ оплаты: ${pay}
           `
-    await axios
-      .post(
+    await axios.post(
         'https://api.telegram.org/bot6449386041:AAGzqG0r-R9AJFcY0EeV0vv6XBjFNDx_7xE/sendMessage',
         {
           chat_id: '-1001929441485',
           text: message,
-        },
-      )
-      .then((res) => {
+        }
+      ).then((res) => {
         onClickClearCart();
-      })
-      .catch((err) => {
+      }).catch((err) => {
         console.warn(err);
       });
   };
