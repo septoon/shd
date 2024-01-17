@@ -12,7 +12,7 @@ const Header = ({toggleMenu, isOpen}) => {
             <button type="button" onClick={toggleMenu}>
               <div className="">
                 <svg
-                  className="h-8 w-8 text-white animate-pulse"
+                  className="h-8 w-8 text-white"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -27,9 +27,9 @@ const Header = ({toggleMenu, isOpen}) => {
           ) : (
             <button type="button" onClick={toggleMenu}>
               <div className="w-8 space-y-2" >
-                <span className="block h-0.5 w-8 animate-pulse bg-white"></span>
-                <span className="block h-0.5 w-8 animate-pulse bg-white"></span>
-                <span className="block h-0.5 w-6 animate-pulse bg-white"></span>
+                <span className="block h-0.5 w-8 bg-white"></span>
+                <span className="block h-0.5 w-8 bg-white"></span>
+                <span className="block h-0.5 w-6 bg-white"></span>
               </div>
             </button>
           )

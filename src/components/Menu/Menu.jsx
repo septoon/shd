@@ -6,7 +6,7 @@ import { toggleIsActive } from "../../redux/catalog-reducer"
 import MenuItem from "./MenuItem";
 import { NavLink } from "react-router-dom";
 
-const Menu = ({item}) => {
+const Menu = ({item, catalogName}) => {
   const dispatch = useDispatch()
   
   const { isActive, totalCount, items } = useSelector(({ catalogPage, cart }) => ({
@@ -20,6 +20,8 @@ const Menu = ({item}) => {
   }
   return (
     <div className="w-full flex flex-col justify-start mt-6">
+      <h1 className="px-4 text-2xl font-semibold">Меню</h1>
+      <h3 className="px-4 text-xl font-semibold text-metal mb-8">{catalogName ? catalogName : 'Холодные закуски'}</h3>
       <div className=" flex flex-wrap justify-start ">
         {item.map((i) => (
           <MenuItem {...i} key={i.id} onClickAddDish={addDishToCart} toggleIsActive={toggleIsActive} isActive={isActive} />

@@ -17,7 +17,7 @@ const MenuItem = ({ id, image, name, serving, price, isChange, onClickAddDish, t
 
   return (
     <div className="w-5/12 flex flex-col items-center rounded-10 ml-5">
-      <img src={pic} className="rounded-md" alt="pic" />
+      <img src={image ? image : pic} className="rounded-md min-w-40 min-h-28 max-w-40 max-h-28" alt="pic" />
       <div className="item_name">
         <span className="name">{name}</span>
       </div>

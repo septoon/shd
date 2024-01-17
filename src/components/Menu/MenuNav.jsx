@@ -1,7 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const MenuNav = ({ data, setItem, isItemsOpen, toggleMenuItems }) => {
+const MenuNav = ({ data, setItem, isItemsOpen, toggleMenuItems, getCatalogName }) => {
+
   return (
     <div className={isItemsOpen ? '' : 'hidden'}>
       <div className="min-w-56 flex flex-col bg-white justify-around items-start pl-2 rounded-xl shadow-lg shadow-black-900/50 h-96">
@@ -12,6 +13,7 @@ const MenuNav = ({ data, setItem, isItemsOpen, toggleMenuItems }) => {
               className="text-dark text-sm hover:text-orange"
               onClick={(e) => {
                 setItem(data[category]);
+                getCatalogName(category)
                 toggleMenuItems(false);
               }}>
               {category}

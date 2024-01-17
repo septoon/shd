@@ -26,16 +26,21 @@ function App() {
     setIsItemsOpen(!isItemsOpen);
   };
 
+  const [catalogName, setCatalogName] = useState("");
+  const getCatalogName = (catalog) => {
+    setCatalogName(catalog)
+  }
+
   return (
     <div className="bg-shd w-full bg-cover bg-center bg-fixed flex flex-col items-center relative pt-20 min-h-screen">
       <Header toggleMenu={toggleMenu} isOpen={isOpen} />
       <Navbar toggleMenu={toggleMenu} isOpen={isOpen} />
       <MenuBtn toggleMenuItems={toggleMenuItems} />
 
-      <MenuNav setItem={setItem} isItemsOpen={isItemsOpen} toggleMenuItems={toggleMenuItems} data={data} />
+      <MenuNav setItem={setItem} isItemsOpen={isItemsOpen} getCatalogName={getCatalogName} toggleMenuItems={toggleMenuItems} data={data} />
 
       <Routes>
-        <Route exact path="/shd" element={<Menu item={item} />} />
+        <Route exact path="/shd" element={<Menu item={item} catalogName={catalogName} />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/about" element={<About />} />
         <Route path="/cart" element={<Cart />} />

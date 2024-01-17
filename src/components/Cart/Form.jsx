@@ -139,7 +139,7 @@ const Form = ({
               setTimeout(() => {
                 onClickClearCart();
                 setIsOrder(false);
-              }, 5000);
+              }, 500);
             }}>
             Отправить
           </button>
