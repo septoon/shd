@@ -8,7 +8,10 @@ module.exports = {
       backgroundImage: theme => ({
         'shd': "url('./assets/img/bg-shd.jpg')",
         'menu': "url('./assets/img/menu-icon4.png')"
-      })
+      }),
+      boxShadow: {
+        '3xl': '0 35px 60px 5px rgba(0, 0, 0, .9)',
+      }
     },
     colors: {
       'dark': "#1d1d1d",
@@ -22,6 +25,8 @@ module.exports = {
       'bubble-gum': '#ff77e9',
       'bermuda': '#78dcca',
       'orange': '#FFA500',
+      'light-gray': '#D3D3D3',
+      'lightSlate-gray': '#778899',
     }
   },
   plugins: [],

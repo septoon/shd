@@ -37,7 +37,7 @@ function App() {
       <Navbar toggleMenu={toggleMenu} isOpen={isOpen} />
       <MenuBtn toggleMenuItems={toggleMenuItems} />
 
-      <MenuNav setItem={setItem} isItemsOpen={isItemsOpen} getCatalogName={getCatalogName} toggleMenuItems={toggleMenuItems} data={data} />
+      <MenuNav setItem={setItem} setIsItemsOpen={setIsItemsOpen} isItemsOpen={isItemsOpen} getCatalogName={getCatalogName} toggleMenuItems={toggleMenuItems} data={data} />
 
       <Routes>
         <Route exact path="/shd" element={<Menu item={item} catalogName={catalogName} />} />
