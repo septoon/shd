@@ -1,16 +1,18 @@
 {
   "files": {
-    "main.css": "/shd/static/css/main.5fd38a45.css",
-    "main.js": "/shd/static/js/main.710f24cc.js",
+    "main.css": "/shd/static/css/main.f5ff57c3.css",
+    "main.js": "/shd/static/js/main.3504ed1b.js",
     "static/media/bg-shd.jpg": "/shd/static/media/bg-shd.e72330455a06303f176d.jpg",
     "static/media/pic1.jpg": "/shd/static/media/pic1.9aee37cd11fe7cdb0529.jpg",
+    "static/media/title-shd.svg": "/shd/static/media/title-shd.649bdadd6168c08b909d259cbbb30218.svg",
+    "static/media/logo-shd.svg": "/shd/static/media/logo-shd.21d8bf2c59e9444b498c903398b382fb.svg",
     "static/media/shopping-cart.svg": "/shd/static/media/shopping-cart.d05720f2b474db2145233cd2ce1d4e91.svg",
     "index.html": "/shd/index.html",
-    "main.5fd38a45.css.map": "/shd/static/css/main.5fd38a45.css.map",
-    "main.710f24cc.js.map": "/shd/static/js/main.710f24cc.js.map"
+    "main.f5ff57c3.css.map": "/shd/static/css/main.f5ff57c3.css.map",
+    "main.3504ed1b.js.map": "/shd/static/js/main.3504ed1b.js.map"
   },
   "entrypoints": [
-    "static/css/main.5fd38a45.css",
-    "static/js/main.710f24cc.js"
+    "static/css/main.f5ff57c3.css",
+    "static/js/main.3504ed1b.js"
   ]
 }
