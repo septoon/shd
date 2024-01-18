@@ -78,7 +78,7 @@ const Form = ({
                 className="order_input"
                 onChange={handleAddressChange}
                 name="address"
-                placeholder="ул. Горького, 54"
+                placeholder="ул. Ленина, 13"
               />
             </div>
             <label>Введите ваш номер телефона:</label>
@@ -87,7 +87,7 @@ const Form = ({
                 required
                 className="order_input"
                 onChange={handlePhoneNumChange}
-                placeholder="+7 (978) 704 88 06"
+                placeholder="+7 (978) 879 62 20"
                 name="telephone"
                 type="tel"
               />

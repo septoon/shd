@@ -1,11 +1,11 @@
 import React from 'react'
 import ShdTitle from '../../assets/img/title-shd.svg'
-import ShdLogo from '../../assets/img/logo-shd.svg'
+import ShdLogo from '../../assets/img/logo-shd.png'
 
 const Header = ({toggleMenu, isOpen}) => {
   return (
     <div className="flex h-20 items-center justify-between fixed top-0 left-0 right-0 bg-dark">
-      <div className='flex flex-row justify-center w-1/2 px-4'>
+      <div className='flex flex-row justify-center w-1/2 px-2'>
         <img src={ShdTitle} alt="Шашлычный Дом" className='w-full' />
       </div>
         <img src={ShdLogo} alt="logo" className='h-14'/>

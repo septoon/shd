@@ -10,7 +10,7 @@ export const data = {
     },
     {
       image: "https://i.ibb.co/vdSnzQ1/IMAGE-2024-01-17-13-08-10.jpg",
-      name: "Ассорти из маринованых овощей",
+      name: "Ассорти из марин. овощей",
       serving: "300 г",
       price: 420,
       isChange: false, 
@@ -34,7 +34,7 @@ export const data = {
     },
     {
       image: "https://i.ibb.co/hBWr3kB/IMAGE-2024-01-17-13-09-39.jpg",
-      name: "Баклажановые рулетики с грецкими орехами",
+      name: "Баклажановые рулетики с грец. орех.",
       serving: "4 шт",
       price: 440,
       isChange: false, 
