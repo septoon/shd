@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       backgroundImage: theme => ({
         'shd': "url('./assets/img/bg-shd.jpg')",
-        'menu': "url('./assets/img/menu-icon4.png')"
+        'menu': "url('./assets/img/menu-icon.png')"
       }),
       boxShadow: {
         '3xl': '0 35px 60px 5px rgba(0, 0, 0, .9)',

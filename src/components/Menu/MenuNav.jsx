@@ -4,11 +4,12 @@ import { NavLink } from 'react-router-dom';
 const MenuNav = ({ data, setItem, isItemsOpen, setIsItemsOpen, toggleMenuItems, getCatalogName }) => {
 
   return (
-    <div className={isItemsOpen ? 'w-full fixed bottom-0 transition-all duration-600' : 'w-full fixed -bottom-96 transition-all duration-600'}>
-      <div className="w-full flex flex-col relative bg-white justify-around items-start rounded-t-lg h-auto pb-6">
-        <div className='bg-dark w-full h-10 rounded-t-lg flex items-center justify-around'>
-          <span>Меню</span>
-          <button onClick={() => setIsItemsOpen(false)} className='text-white mr-2'>
+    <div className={isItemsOpen ? 'w-full fixed bottom-0 transition-all duration-600 z-50 shadow-3xl' : 'w-full fixed -bottom-[450px] transition-all duration-600'}>
+      <div className="w-full flex flex-col relative bg-white justify-around items-center rounded-t-lg h-auto pb-10">
+        <div className='bg-lightSlate-gray w-full h-10 rounded-t-lg flex items-center justify-between px-5'>
+          <div className='w-8 h-8 opacity-0'>Каринка</div>
+          <span className='text-white font-bold'>Меню</span>
+          <button onClick={() => setIsItemsOpen(false)} className='text-white mt-0'>
           <svg
                   className="h-8 w-8 text-white"
                   viewBox="0 0 24 24"
@@ -25,7 +26,7 @@ const MenuNav = ({ data, setItem, isItemsOpen, setIsItemsOpen, toggleMenuItems, 
         {Object.keys(data).map((category, index) => (
           <NavLink to="/shd" key={index}>
             <button
-              className="text-dark text-sm hover:text-orange w-full"
+              className="text-dark text-md font-semibold hover:text-orange w-full"
               onClick={(e) => {
                 setItem(data[category]);
                 getCatalogName(category)
