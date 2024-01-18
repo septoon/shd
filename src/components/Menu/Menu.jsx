@@ -10,9 +10,10 @@ import cartIcon from '../../assets/img/shopping-cart.svg'
 const Menu = ({item, catalogName}) => {
   const dispatch = useDispatch()
   
-  const { isActive, totalPrice, items } = useSelector(({ catalogPage, cart }) => ({
+  const { isActive, totalPrice, totalCount, items } = useSelector(({ catalogPage, cart }) => ({
     isActive: catalogPage.isActive,
     totalPrice: cart.totalPrice,
+    totalCount: cart.totalCount,
     items: cart.items
   }))
 
@@ -30,9 +31,10 @@ const Menu = ({item, catalogName}) => {
       </div>
       {
         items.length > 0 && (
-          <NavLink to='/cart' className='w-24 h-10 flex justify-around items-center animate-pulse rounded-md text-white bg-lightSlate-gray shadow-xl bg-cover bg-center fixed bottom-6 left-6'>
-              <img className="h-6" src={cartIcon} alt="icon" />
-              <span className="font-bold">{totalPrice} ₽</span>
+          <NavLink to='/cart' className='w-28 h-10 px-2 flex justify-around items-center animate-pulse rounded-md text-white bg-lightSlate-gray shadow-xl bg-cover bg-center fixed bottom-6 left-6'>
+            <span className="text-white font-bold">{totalCount}</span>
+            <img className="h-6" src={cartIcon} alt="icon" />
+            <span className="font-bold">{totalPrice} ₽</span>
           </NavLink>
         )
       }

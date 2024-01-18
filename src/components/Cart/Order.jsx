@@ -1,6 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react'
 
-const Form = ({
+const Order = ({
   setIsOrder,
   items,
   countById,
@@ -9,9 +9,6 @@ const Form = ({
   totalPrice,
   sendOrder,
 }) => {
-  const form = useRef();
-  const comment = useRef();
-
   const [address, setAddress] = useState('');
   const [phoneNum, setPhoneNum] = useState('');
   const [commentValue, setCommentValue] = useState('');
@@ -39,18 +36,12 @@ const Form = ({
     const value = `${i.name} | ${i.serving} | ${i.price} ₽ | x ${count}шт.`;
     return value;
   });
-
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 bg-white">
       <div className="email-form-wrapper">
         <img src="" className="close-btn" alt="close" onClick={() => setIsOrder(false)} />
         <h2 className="form-title">Ваш заказ:</h2>
-        <form
-          ref={form}
-          onSubmit={() =>
-            sendOrder('Доставка', address, phoneNum, commentValue, dishesList.toString(), payValue)
-          }
-          className="form-total">
+        <div className="form-total">
           <div className="order_list_wrapper">
             {items.map((i) => {
               const count = countById(totalItems, i.id, i.activeSize);
@@ -85,7 +76,6 @@ const Form = ({
             </div>
             <div>
               <input
-                ref={comment}
                 name="comment"
                 onChange={handleCommentChange}
                 type="text"
@@ -127,16 +117,17 @@ const Form = ({
             disabled={!address}
             className="bg-purple w-auto"
             onClick={() => {
+              sendOrder('Доставка', address, phoneNum, commentValue, dishesList.toString(), payValue)
               setTimeout(() => {
                 setIsOrder(false);
-              }, 500);
+              }, 2000);
             }}>
             Отправить
           </button>
-        </form>
+        </div>
       </div>
     </div>
   );
-};
+}
 
-export default Form;
+export default Order

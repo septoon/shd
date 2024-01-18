@@ -4,8 +4,10 @@ import { NavLink } from 'react-router-dom';
 import { clearDishCartAC, removeDishAC } from '../../redux/cart-reducer';
 import CartItem from './CartItem';
 import Form from './Form';
+import Trash from '../../assets/img/trash.svg'
 
 import axios from 'axios';
+import Order from './Order';
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -63,8 +65,7 @@ const Cart = () => {
     Комментарий: ${comment}
     Способ оплаты: ${pay}
           `;
-    await axios
-      .post(
+    await axios.post(
         'https://api.telegram.org/bot6449386041:AAGzqG0r-R9AJFcY0EeV0vv6XBjFNDx_7xE/sendMessage',
         {
           chat_id: '-1001929441485',
@@ -79,10 +80,10 @@ const Cart = () => {
       });
   };
   return (
-    <div className="pt-6">
-      <h1 className="px-5 text-2xl font-semibold">Корзина</h1>
+    <div className="pt-6 w-full">
+      <h1 className="pl-6 text-2xl font-semibold">Корзина</h1>
       {isOrder && (
-        <Form
+        <Order
           setIsOrder={setIsOrder}
           onClickClearCart={onClickClearCart}
           countById={countById}
@@ -97,19 +98,18 @@ const Cart = () => {
         {items.length ? (
           // Если в корзине что-то есть
           <>
-            <div className="">
-              <h2 className=""> Корзина</h2>
+            <div className="w-full flex justify-end text-lightSlate-gray pr-6">
               <div
-                className=""
+                className="flex mt-2 mb-4"
                 onClick={() => {
                   let popup = window.confirm('Вы уверены, что хотите очистить корзину?');
                   popup && dispatch(clearDishCartAC());
                 }}>
-                <img src="" alt="" />
+                <img className='text-lightSlate-gray' src={Trash} alt="trash" />
                 <span>Очистить корзину</span>
               </div>
             </div>
-            <div className="">
+            <div className="px-2 max-h-half-screen overflow-y-auto">
               {uniqueProducts.map((item, index) => {
                 const count = countById(items, item.id, item.activeSize);
 
@@ -124,23 +124,20 @@ const Cart = () => {
               })}
             </div>
             <div className="">
-              <div className="">
+              <div className="fixed bottom-[12%] left-0 w-full flex justify-between px-6">
                 <span>
                   {' '}
-                  Всего блюд: <b>{totalCount} шт.</b>{' '}
+                  Всего блюд: <b className='font-bold text-lg'>{totalCount} шт.</b>{' '}
                 </span>
                 <span>
                   {' '}
-                  Сумма заказа: <b>{totalPrice} ₽</b>{' '}
+                  Сумма заказа: <b className='text-lightSlate-gray text-lg'>{totalPrice} ₽</b>{' '}
                 </span>
               </div>
               <div className="">
-                <NavLink to="/shd" className="">
-                  <button className="">Вернуться назад</button>
-                </NavLink>
                 <div className="">
-                  <button className="" onClick={() => setIsOrder(true)}>
-                    Заказать
+                  <button className="w-auto bg-lightSlate-gray text-white px-4 py-2 rounded-md fixed bottom-8 left-6" onClick={() => setIsOrder(true)}>
+                    Оформить заказ
                   </button>
                 </div>
               </div>
@@ -157,7 +154,7 @@ const Cart = () => {
             <img src="" alt="empty-cart-logo" className="" />
 
             <NavLink to="/shd" className="">
-              <button className="">Вернуться назад</button>
+              <button className="w-auto bg-lightSlate-gray px-4 py-2 rounded-md fixed bottom-8 left-6">Вернуться назад</button>
             </NavLink>
           </div>
         )}

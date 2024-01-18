@@ -12,7 +12,6 @@ const MenuItem = ({
   toggleIsActive,
   isActive,
 }) => {
-  const priceHolder = React.createRef();
 
   const onAddDishes = () => {
     const obj = {
@@ -26,7 +25,7 @@ const MenuItem = ({
   };
 
   return (
-    <div className="w-full md:w-1/2 flex flex-row items-center rounded-10 mb-5 bg-white rounded-md shadow-xl">
+    <div className="w-full md:w-1/2 lg:w-1/3 flex flex-row items-center rounded-10 mb-5 bg-white rounded-md shadow-xl">
       <img
         src={image ? image : pic}
         className="rounded-md min-w-40 min-h-28 max-w-40 max-h-28"
@@ -41,7 +40,7 @@ const MenuItem = ({
         </div>
         <div className='w-full flex flex-row justify-between items-center pr-2'>
           <span className='font-bold text-lightSlate-gray'>{price} ₽</span>
-          <button className='transition-all duration-100 mt-0 w-auto h-auto  bg-lightSlate-gray active:bg-light-gray focus:outline-none  text-white rounded-md py-1 px-2 ' onClick={onAddDishes}>В корзину</button>
+          <button className=' mt-0 w-auto h-auto  bg-lightSlate-gray active:bg-light-gray focus:outline-none  text-white rounded-md py-1 px-2 ' onClick={onAddDishes}>В корзину</button>
         </div>
       </div>
     </div>

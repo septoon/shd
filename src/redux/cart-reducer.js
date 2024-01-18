@@ -38,7 +38,7 @@ const cartReducer = (state = initialState, action) => {
     case MINUS_DISH: {
       const { dishId, dishSize } = action.payload;
       const updatedItems = state.items.filter(item => item.id !== dishId || item.activeSize !== dishSize);
-      const newTotalPrice = updatedItems.reduce((sum, item) => sum + parseInt(item.activePrice) + 40, 0);
+      const newTotalPrice = updatedItems.reduce((sum, item) => sum + parseInt(item.price), 0);
       return {
         ...state,
         items: updatedItems,
