@@ -41,7 +41,7 @@ export const data = {
       id: 3
     },
     {
-      image: "",
+      image: "https://i.ibb.co/x6d1X1D/IMAGE-2024-01-19-16-22-34.jpg",
       name: "Индейка в лаваше",
       serving: "2 шт",
       price: 470,
@@ -59,7 +59,7 @@ export const data = {
       id: 5
     },
     {
-      image: "",
+      image: "https://i.ibb.co/S3GfbVF/IMAGE-2024-01-19-16-21-15.jpg",
       name: "Сыр Чеддер",
       serving: "150/80 г",
       price: 560,
@@ -75,7 +75,7 @@ export const data = {
       id: 7
     },
     {
-      image: "",
+      image: "https://i.ibb.co/sg4RcqP/IMAGE-2024-01-19-16-21-58.jpg",
       name: "Ланустины в чесночном соусе",
       serving: "4 шт",
       price: 690,
@@ -91,7 +91,7 @@ export const data = {
       id: 9
     },
     {
-      image: "",
+      image: "https://i.ibb.co/JBYcVRX/IMAGE-2024-01-19-16-23-13.jpg",
       name: "Жюльен с индейкой и грибами",
       serving: "150 г",
       price: 410,
@@ -212,7 +212,7 @@ export const data = {
   ],
   "Гарниры": [
     {
-      image: "",
+      image: "https://i.ibb.co/Fsw3zZv/potato-free-nov.jpg",
       name: "Картофель фри",
       serving: "200 г",
       price: 200,
@@ -220,7 +220,7 @@ export const data = {
       id: 26
     },
     {
-      image: "",
+      image: "https://i.ibb.co/PgPxP9M/shutterstock-793903501-800x533.jpg",
       name: "Картофель по-деревенски",
       serving: "200 г",
       price: 220,
@@ -228,7 +228,7 @@ export const data = {
       id: 27
     },
     {
-      image: "",
+      image: "https://i.ibb.co/HrtDt14/kartoshka-gribi-4.jpg",
       name: "Картофель по домашнему с грибами",
       serving: "250 г",
       price: 280,
@@ -236,7 +236,7 @@ export const data = {
       id: 28
     },
     {
-      image: "",
+      image: "https://i.ibb.co/6FGrMyf/image.jpg",
       name: "Наггетсы",
       serving: "6 шт",
       price: 220,
@@ -246,7 +246,7 @@ export const data = {
   ],
   "Блюда на мангале": [
     {
-      image: "",
+      image: "https://i.ibb.co/bP18RNX/IMAGE-2024-01-19-16-23-55.jpg",
       name: "Овощной шашлык",
       options: "Цена за 100г",
       serving: "100 г",
@@ -257,7 +257,7 @@ export const data = {
   ],
   "Соусы": [
     {
-      image: "",
+      image: "https://i.ibb.co/yS71Qxd/18ac23be-16b9-4314-80c1-ac1e1bb5a975.webp",
       name: "Сырный",
       serving: "1 шт",
       price: 120,
@@ -265,7 +265,7 @@ export const data = {
       id: 31
     },
     {
-      image: "",
+      image: "https://i.ibb.co/D9LHh9Z/tomato-sauce-2000x1200.jpg",
       name: "Фирменный",
       serving: "1 шт",
       price: 120,
@@ -273,7 +273,7 @@ export const data = {
       id: 32
     },
     {
-      image: "",
+      image: "https://i.ibb.co/LRSx779/23022140-1.jpg",
       name: "Белый с чесноком",
       serving: "1 шт",
       price: 120,
@@ -281,7 +281,7 @@ export const data = {
       id: 33
     },
     {
-      image: "",
+      image: "https://i.ibb.co/fp4wfh1/sousarman.jpg",
       name: "Аджика",
       serving: "1 шт",
       price: 120,
@@ -291,7 +291,7 @@ export const data = {
   ],
   "Хлеб": [
     {
-      image: "",
+      image: "https://i.ibb.co/LdMgWdT/IMG-0834.jpg",
       name: "Лепешка",
       serving: "1 шт",
       price: 120,
@@ -299,7 +299,7 @@ export const data = {
       id: 35
     },
     {
-      image: "",
+      image: "https://i.ibb.co/Kbh51LJ/image.jpg",
       name: "Лаваш",
       serving: "2 шт",
       price: 60,
@@ -309,7 +309,7 @@ export const data = {
   ],
   "Напитки": [
     {
-      image: "",
+      image: "https://i.ibb.co/WPN5GvL/Tvr27-A-tn-HQ.jpg",
       name: "Сок в ассортименте",
       serving: "1л",
       price: 320,
@@ -317,7 +317,7 @@ export const data = {
       id: 37
     },
     {
-      image: "",
+      image: "https://i.ibb.co/cxLczZp/2b1u17ekr4h29ra1n5bse315vefdb63u.jpg",
       name: "Боржоми",
       serving: "0.5л",
       price: 220,
@@ -325,7 +325,7 @@ export const data = {
       id: 38
     },
     {
-      image: "",
+      image: "https://i.ibb.co/cgJx9Ng/Unknown.png",
       name: "Минеральная вода",
       serving: "0.5л",
       price: 140,
@@ -333,7 +333,7 @@ export const data = {
       id: 39
     },
     {
-      image: "",
+      image: "https://i.ibb.co/SxV4pXr/150752-napitok-pepsi-gazirovannyi-500-ml.jpg",
       name: "Пепси",
       serving: "0.5л",
       price: 190,
@@ -341,7 +341,7 @@ export const data = {
       id: 40
     },
     {
-      image: "",
+      image: "https://i.ibb.co/FgRZT84/limonad.jpg",
       name: "Крымский лимонад",
       serving: "0.5л",
       price: 180,
@@ -351,21 +351,21 @@ export const data = {
   ],
   "Десерты": [
     {
-      image: "",
+      image: "https://i.ibb.co/1rkk49r/Unknown.jpg",
       name: "Медовик",
       price: 350,
       isChange: false, 
       id: 42
     },
     {
-      image: "",
+      image: "https://i.ibb.co/qYDWY5Z/images-2.jpg",
       name: "Наполеон",
       price: 350,
       isChange: false, 
       id: 43
     },
     {
-      image: "",
+      image: "https://i.ibb.co/PW9m5g6/images.jpg",
       name: "Чизчейк",
       price: 350,
       isChange: false, 
