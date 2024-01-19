@@ -124,10 +124,10 @@ const Cart = () => {
               })}
             </div>
             <div className="">
-              <div className="fixed bottom-[12%] left-0 w-full flex justify-between px-6">
+              <div className="fixed bottom-[12%] left-0 w-full flex flex-col justify-between px-6">
                 <span>
                   {' '}
-                  Всего блюд: <b className='font-bold text-lg'>{totalCount} шт.</b>{' '}
+                  Всего блюд: <b className='font-bold text-lg text-lightSlate-gray'>{totalCount} шт.</b>{' '}
                 </span>
                 <span>
                   {' '}
@@ -136,7 +136,7 @@ const Cart = () => {
               </div>
               <div className="">
                 <div className="">
-                  <button className="w-auto bg-lightSlate-gray text-white px-4 py-2 rounded-md fixed bottom-8 left-6" onClick={() => setIsOrder(true)}>
+                  <button className="w-auto bg-lightSlate-gray text-white px-4 py-2 rounded-md fixed bottom-main-btn left-6" onClick={() => setIsOrder(true)}>
                     Оформить заказ
                   </button>
                 </div>
@@ -154,7 +154,7 @@ const Cart = () => {
             <img src="" alt="empty-cart-logo" className="" />
 
             <NavLink to="/shd" className="">
-              <button className="w-auto bg-lightSlate-gray px-4 py-2 rounded-md fixed bottom-8 left-6">Вернуться назад</button>
+              <button className="w-auto bg-lightSlate-gray text-white px-4 py-2 rounded-md fixed bottom-main-btn left-6">Вернуться назад</button>
             </NavLink>
           </div>
         )}

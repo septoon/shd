@@ -13,7 +13,8 @@ module.exports = {
         '3xl': '0 35px 60px 5px rgba(0, 0, 0, .9)',
       },
       spacing: {
-        'half-screen': '60vh',
+        'half-screen': '55vh',
+        'main-btn': '4dvh'
       }
     },
     colors: {

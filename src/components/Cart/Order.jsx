@@ -37,22 +37,36 @@ const Order = ({
     return value;
   });
   return (
-    <div className="fixed top-0 left-0 right-0 bottom-0 bg-white">
-      <div className="email-form-wrapper">
-        <img src="" className="close-btn" alt="close" onClick={() => setIsOrder(false)} />
-        <h2 className="form-title">Ваш заказ:</h2>
-        <div className="form-total">
-          <div className="order_list_wrapper">
+    <div className="fixed top-0 left-0 right-0 bottom-0 bg-white z-50">
+      <div className="">
+        <div className='h-auto w-full pr-6 flex justify-end'>
+          <button onClick={() => setIsOrder(false)}>
+            <svg
+              className="h-8 w-8 text-dark"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+        <h1 className="pl-6 text-2xl font-semibold mb-4">Ваш заказ:</h1>
+        <div className="px-2">
+          <div className="max-h-20vh overflow-y-auto flex flex-col">
             {items.map((i) => {
               const count = countById(totalItems, i.id, i.activeSize);
               return (
                
-                <span key={i.id} className="w-full">{`${i.name} | ${i.serving} | ${i.price} ₽ | x ${count}шт.`}</span>
+                <span key={i.id} className="w-full text-xs">{`${i.name} | ${i.serving ? i.serving + ' |': ''} ${i.price} ₽ | x ${count}шт.`}</span>
               );
             })}
           </div>
-          <div className="order_inputs_wrapper">
-            <span>{`На сумму: ${totalPrice} ₽`}</span>
+          <div className="flex flex-col">
+            <span>На сумму: <b className='text-lightSlate-gray'>{totalPrice}</b> ₽</span>
             <label>Введите ваш адрес:</label>
             <div className="inp_valid">
               <input
@@ -115,7 +129,7 @@ const Order = ({
           <button
             type="submit"
             disabled={!address}
-            className="bg-purple w-auto"
+            className="w-auto bg-lightSlate-gray px-4 py-2 rounded-md fixed bottom-main-btn left-6"
             onClick={() => {
               sendOrder('Доставка', address, phoneNum, commentValue, dishesList.toString(), payValue)
               setTimeout(() => {

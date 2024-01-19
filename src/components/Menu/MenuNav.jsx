@@ -26,7 +26,7 @@ const MenuNav = ({ data, setItem, isItemsOpen, setIsItemsOpen, toggleMenuItems, 
         {Object.keys(data).map((category, index) => (
           <NavLink to="/shd" key={index}>
             <button
-              className="text-dark text-md font-semibold hover:text-orange w-full"
+              className="text-dark text-md font-semibold w-full"
               onClick={(e) => {
                 setItem(data[category]);
                 getCatalogName(category)

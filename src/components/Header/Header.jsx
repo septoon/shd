@@ -4,7 +4,7 @@ import ShdLogo from '../../assets/img/logo-shd.png'
 
 const Header = ({toggleMenu, isOpen}) => {
   return (
-    <div className="flex h-20 items-center justify-between fixed top-0 left-0 right-0 bg-dark">
+    <div className="flex h-20 items-center justify-between fixed top-0 left-0 right-0 bg-dark z-50">
       <div className='flex flex-row justify-center w-1/2 px-2'>
         <img src={ShdTitle} alt="Шашлычный Дом" className='w-full' />
       </div>
