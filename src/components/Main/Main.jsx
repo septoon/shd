@@ -5,7 +5,7 @@ const Main = () => {
   return (
     <div className="pt-6 px-6 w-full flex flex-col h-[calc(100vh-80px)] overflow-hidden bg-main text-white bg-cover bg-no-repeat bg-center bg-fixed">
       <h1 className=" text-2xl font-semibold">Главная</h1>
-      <div className='flex flex-col justify-around h-[50%]'>
+      <div className='flex flex-col justify-around h-[50%] mt-8'>
         <div className=" flex flex-col">
           <span className='text-xl italic'>Доставка вкусного шашлыка в Алуште</span>
           <span className='text-xl font-semibold my-3'>Бесплатная доставка от 1000 рублей</span>
