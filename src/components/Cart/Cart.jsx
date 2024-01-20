@@ -18,9 +18,7 @@ const Cart = ({isOpen}) => {
     totalCount: cart.totalCount,
   }));
 
-  const backBtnClassName = items.length ? 'cart_back_btn' : 'cart_back_btn empty';
-
-  // Создайте новый массив уникальных элементов, используя метод reduce().
+  // Создаем новый массив уникальных элементов, используя метод reduce().
   const uniqueProducts = items.reduce((acc, current) => {
     // Проверяем, есть ли элемент с таким же id в массиве acc
     const isDuplicate = acc.find(

@@ -32,21 +32,25 @@ function App() {
     setCatalogName(catalog)
   }
 
+  const appStyle = "w-full flex flex-col items-center relative pt-20"
+
   return (
-    <div className="bg-shd w-full bg-cover bg-center bg-fixed flex flex-col items-center relative pt-20 min-h-screen">
-      <Header toggleMenu={toggleMenu} isOpen={isOpen} />
-      <Navbar toggleMenu={toggleMenu} isOpen={isOpen} />
-        <MenuBtn toggleMenuItems={toggleMenuItems} />
+    <div className="bg-shd w-full bg-cover bg-center bg-fixed min-h-screen">
+      <div className={isOpen ? appStyle + " h-screen overflow-y-hidden" : appStyle}>
+        <Header toggleMenu={toggleMenu} isOpen={isOpen} />
+        <Navbar toggleMenu={toggleMenu} isOpen={isOpen} />
+          <MenuBtn toggleMenuItems={toggleMenuItems} />
 
-        <MenuNav setItem={setItem} setIsItemsOpen={setIsItemsOpen} isItemsOpen={isItemsOpen} getCatalogName={getCatalogName} toggleMenuItems={toggleMenuItems} data={data} />
+          <MenuNav setItem={setItem} setIsItemsOpen={setIsItemsOpen} isItemsOpen={isItemsOpen} getCatalogName={getCatalogName} toggleMenuItems={toggleMenuItems} data={data} />
 
-        <Routes>
-          <Route exact path="/shd" element={<Menu item={item} catalogName={catalogName} />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/delivery" element={<Delivery />} />
-          <Route path="/contacts" element={<Contacts />} />
-          <Route path="/cart" element={<Cart isOpen={isOpen} />} />
-        </Routes>
+          <Routes>
+            <Route exact path="/shd" element={<Menu item={item} catalogName={catalogName} />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/delivery" element={<Delivery />} />
+            <Route path="/contacts" element={<Contacts />} />
+            <Route path="/cart" element={<Cart isOpen={isOpen} />} />
+          </Routes>
+      </div>
     </div>
   );
 }

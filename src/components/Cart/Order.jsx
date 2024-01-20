@@ -39,7 +39,7 @@ const Order = ({
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 bg-white z-50">
       <div className="">
-        <div className='h-auto w-full pr-6 flex justify-end'>
+        <div className='h-auto w-full pr-6 pt-3 flex justify-end'>
           <button onClick={() => setIsOrder(false)}>
             <svg
               className="h-8 w-8 text-dark"
@@ -129,7 +129,7 @@ const Order = ({
           <button
             type="submit"
             disabled={!address}
-            className="w-auto bg-lightSlate-gray px-4 py-2 rounded-md fixed bottom-main-btn left-6"
+            className="w-auto bg-lightSlate-gray text-white px-4 py-2 rounded-md fixed bottom-main-btn left-6"
             onClick={() => {
               sendOrder('Доставка', address, phoneNum, commentValue, dishesList.toString(), payValue)
               setTimeout(() => {
