@@ -10,6 +10,7 @@ import MenuBtn from "./components/Menu/MenuBtn.jsx";
 import Contacts from "./components/About/Contacts.jsx";
 import Delivery from "./components/Delivery/Delivery.jsx";
 import Main from "./components/Main/Main.jsx";
+import MenuCards from "./components/Menu/MenuCards.jsx";
 
 function App() {
   const firstKey = Object.keys(data)[0];
@@ -37,7 +38,7 @@ function App() {
   return (
     <div className="bg-shd w-full bg-cover bg-center bg-fixed min-h-screen">
       <div className={isOpen ? appStyle + " h-screen overflow-y-hidden" : appStyle}>
-        <Header toggleMenu={toggleMenu} isOpen={isOpen} />
+        <Header toggleMenu={toggleMenu} setIsOpen={setIsOpen} isOpen={isOpen} />
         <Navbar toggleMenu={toggleMenu} isOpen={isOpen} />
           <MenuBtn toggleMenuItems={toggleMenuItems} />
 
@@ -45,6 +46,7 @@ function App() {
 
           <Routes>
             <Route exact path="/shd" element={<Main />} />
+            <Route exact path="/menu-items" element={<MenuCards setItem={setItem} isItemsOpen={isItemsOpen} getCatalogName={getCatalogName} toggleMenuItems={toggleMenuItems} data={data} />} />
             <Route path="/menu" element={<Menu item={item} catalogName={catalogName} />} />
             <Route path="/delivery" element={<Delivery />} />
             <Route path="/contacts" element={<Contacts />} />

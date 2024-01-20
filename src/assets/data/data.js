@@ -1,7 +1,7 @@
 export const data = {
   "Холодные закуски": [
     {
-      image: "https://i.ibb.co/RHh66sr/IMAGE-2024-01-17-13-06-40.jpg",
+      image: "https://i.ibb.co/5vNLjdj/IMG-3926.jpg",
       name: "Ассорти из сыров",
       serving: "300 г",
       price: 740,
@@ -9,7 +9,7 @@ export const data = {
       id: 0
     },
     {
-      image: "https://i.ibb.co/nkB0c7j/IMG-3928.jpg",
+      image: "https://i.ibb.co/PChdmxs/IMG-3969.jpg",
       name: "Ассорти из марин. овощей",
       serving: "300 г",
       price: 420,
@@ -91,7 +91,7 @@ export const data = {
       id: 9
     },
     {
-      image: "https://i.ibb.co/JBYcVRX/IMAGE-2024-01-19-16-23-13.jpg",
+      image: "https://i.ibb.co/d4B5m1y/IMG-3945.jpg",
       name: "Жюльен с индейкой и грибами",
       serving: "150 г",
       price: 410,
@@ -99,7 +99,7 @@ export const data = {
       id: 10
     },
     {
-      image: "",
+      image: "https://i.ibb.co/GkJZWxX/IMG-5271.jpg",
       name: "Жюльен океан",
       serving: "150 г",
       price: 590,
@@ -130,42 +130,42 @@ export const data = {
       id: 14
     },
     {
-      image: "https://i.ibb.co/6Jjhzvy/IMG-3925.jpg",
+      image: "https://i.ibb.co/SmPcsLk/IMG-5262.jpg",
       name: "Греческий с творожным сыром",
       price: 410,
       isChange: false, 
       id: 15
     },
     {
-      image: "",
+      image: "https://i.ibb.co/2FjdbQd/IMG-5263.jpg",
       name: "Твист из крымских овощей",
       price: 320,
       isChange: false, 
       id: 16
     },
     {
-      image: "https://i.ibb.co/bd2dd1t/IMAGE-2024-01-17-13-12-13.jpg",
+      image: "https://i.ibb.co/3MRHZqK/IMG-5285.jpg",
       name: "Теплый салат с морепродуктами",
       price: 690,
       isChange: false, 
       id: 17
     },
     {
-      image: "https://i.ibb.co/Lnk0t4N/IMAGE-2024-01-17-13-13-25.jpg",
+      image: "https://i.ibb.co/fNPh8M4/IMG-5284.jpg",
       name: "Теплый салат с телятиной",
       price: 620,
       isChange: false, 
       id: 18
     },
     {
-      image: "https://i.ibb.co/ygF5CzW/IMAGE-2024-01-17-13-13-49.jpg",
+      image: "https://i.ibb.co/CbS1NPJ/IMG-5291.jpg",
       name: "Хрустящие баклажаны",
       price: 460,
       isChange: false, 
       id: 19
     },
     {
-      image: "https://i.ibb.co/br4NgPY/IMAGE-2024-01-17-13-14-15.jpg",
+      image: "https://i.ibb.co/6YXJLR0/IMG-5293.webp",
       name: "Телятина с красной фасолью",
       price: 490,
       isChange: false, 
@@ -175,35 +175,35 @@ export const data = {
   ],
   "Паста": [
     {
-      image: "https://i.ibb.co/pRp984D/IMAGE-2024-01-17-13-19-00.jpg",
+      image: "https://i.ibb.co/g7ChCZh/IMG-3975.jpg",
       name: "Фетучини с лососем",
       price: 620,
       isChange: false, 
       id: 21
     },
     {
-      image: "https://i.ibb.co/N7YxK9z/IMAGE-2024-01-17-13-18-34.jpg",
+      image: "https://i.ibb.co/xghnBJG/IMG-3997.jpg",
       name: "Фетучини с морепродуктами",
       price: 690,
       isChange: false, 
       id: 22
     },
     {
-      image: "https://i.ibb.co/vZNsTtC/IMG-3919.jpg",
+      image: "https://i.ibb.co/F7DWVhn/IMG-3986.jpg",
       name: "Индейка и грибы",
       price: 490,
       isChange: false, 
       id: 23
     },
     {
-      image: "https://i.ibb.co/s9mZJCk/IMAGE-2024-01-17-13-16-51.jpg",
+      image: "https://i.ibb.co/ScNwnVz/IMG-3988.jpg",
       name: "Карбонара",
       price: 480,
       isChange: false, 
       id: 24
     },
     {
-      image: "https://i.ibb.co/hBG7kG0/IMAGE-2024-01-17-13-18-02.jpg",
+      image: "https://i.ibb.co/LkkLVx4/IMG-3980.jpg",
       name: "Четыре сыра",
       price: 490,
       isChange: false, 
