@@ -150,7 +150,7 @@ const Cart = ({isOpen}) => {
               страницу меню.
             </p>
 
-            <NavLink to="/shd" className="">
+            <NavLink to="/menu" className="">
               <button className="w-auto bg-lightSlate-gray text-white px-4 py-2 rounded-md fixed bottom-main-btn left-6">Вернуться назад</button>
             </NavLink>
           </div>

@@ -88,12 +88,13 @@ const Order = ({
                 type="tel"
               />
             </div>
-            <div>
+            <div className='w-full'>
               <input
+                className='w-full'
                 name="comment"
                 onChange={handleCommentChange}
                 type="text"
-                placeholder="Комментарий"
+                placeholder="Например: сок мультифрукт, вода без газа и т.д.."
               />
             </div>
             <label>Спооб оплаты:</label>

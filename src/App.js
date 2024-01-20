@@ -10,6 +10,7 @@ import MenuNav from "./components/Menu/MenuNav.jsx";
 import MenuBtn from "./components/Menu/MenuBtn.jsx";
 import Contacts from "./components/About/Contacts.jsx";
 import Delivery from "./components/Delivery/Delivery.jsx";
+import Main from "./components/Main/Main.jsx";
 
 function App() {
   const firstKey = Object.keys(data)[0];
@@ -41,10 +42,11 @@ function App() {
         <Navbar toggleMenu={toggleMenu} isOpen={isOpen} />
           <MenuBtn toggleMenuItems={toggleMenuItems} />
 
-          <MenuNav setItem={setItem} setIsItemsOpen={setIsItemsOpen} isItemsOpen={isItemsOpen} getCatalogName={getCatalogName} toggleMenuItems={toggleMenuItems} data={data} />
+          <MenuNav setItem={setItem} setIsOpen={setIsOpen} setIsItemsOpen={setIsItemsOpen} isItemsOpen={isItemsOpen} getCatalogName={getCatalogName} toggleMenuItems={toggleMenuItems} data={data} />
 
           <Routes>
-            <Route exact path="/shd" element={<Menu item={item} catalogName={catalogName} />} />
+            <Route exact path="/shd" element={<Main />} />
+            <Route path="/menu" element={<Menu item={item} catalogName={catalogName} />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/delivery" element={<Delivery />} />
             <Route path="/contacts" element={<Contacts />} />

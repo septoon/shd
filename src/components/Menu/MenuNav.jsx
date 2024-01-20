@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const MenuNav = ({ data, setItem, isItemsOpen, setIsItemsOpen, toggleMenuItems, getCatalogName }) => {
+const MenuNav = ({ data, setItem, isItemsOpen, setIsItemsOpen, toggleMenuItems, getCatalogName, setIsOpen }) => {
 
   return (
     <div className={isItemsOpen ? 'w-full fixed bottom-0 transition-all duration-600 z-50 shadow-3xl' : 'w-full fixed -bottom-half-screen transition-all duration-600'}>
@@ -28,6 +28,7 @@ const MenuNav = ({ data, setItem, isItemsOpen, setIsItemsOpen, toggleMenuItems, 
             <button
               className="text-dark text-md font-semibold w-full"
               onClick={(e) => {
+                setIsOpen(false)
                 setItem(data[category]);
                 getCatalogName(category)
                 toggleMenuItems(false);
