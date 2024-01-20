@@ -22,7 +22,7 @@ const Menu = ({item, catalogName}) => {
   }
   return (
     <div className="w-full flex flex-col justify-start mt-6">
-      <h1 className="px-5 text-2xl font-semibold">Меню</h1>
+      <h1 className="px-5 text-title font-semibold">Меню</h1>
       <h3 className="px-5 text-xl font-semibold text-lightSlate-gray mb-8">{catalogName ? catalogName : 'Холодные закуски'}</h3>
       <div className=" flex flex-wrap justify-start px-5 pb-[80px]">
         {item.map((i) => (

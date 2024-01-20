@@ -79,7 +79,7 @@ const Cart = ({isOpen}) => {
   };
   return (
     <div className="pt-6 w-full">
-      <h1 className="pl-6 text-2xl font-semibold">Корзина</h1>
+      <h1 className="pl-6 text-title font-semibold">Корзина</h1>
       {isOrder && (
         <Order
           setIsOrder={setIsOrder}
