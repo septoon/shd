@@ -45,7 +45,7 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/delivery" element={<Delivery />} />
           <Route path="/contacts" element={<Contacts />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart" element={<Cart isOpen={isOpen} />} />
         </Routes>
     </div>
   );

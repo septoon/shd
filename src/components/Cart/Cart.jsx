@@ -9,7 +9,7 @@ import Trash from '../../assets/img/trash.svg'
 import axios from 'axios';
 import Order from './Order';
 
-const Cart = () => {
+const Cart = ({isOpen}) => {
   const dispatch = useDispatch();
 
   const { items, totalCount, totalPrice } = useSelector(({ cart }) => ({
@@ -124,7 +124,7 @@ const Cart = () => {
               })}
             </div>
             <div className="">
-              <div className="fixed bottom-[12%] left-0 w-full flex flex-col justify-between px-6">
+              <div className={isOpen ? "translate-y-screen-20 transition-all" : "fixed bottom-[12%] left-0 w-full flex flex-col justify-between px-6 transition-all"}>
                 <span>
                   {' '}
                   Всего блюд: <b className='font-bold text-lg text-lightSlate-gray'>{totalCount} шт.</b>{' '}
@@ -145,13 +145,12 @@ const Cart = () => {
           </>
         ) : (
           // Если корзина пустая
-          <div className="">
-            <h2>Корзина пустая</h2>
+          <div className="px-6 pt-6">
+            <h2 className='mb-6'>Корзина пустая</h2>
             <p>
               Вероятней всего, вы еще ничего не заказали. Для того, чтобы сделать заказ, перейди на
               страницу меню.
             </p>
-            <img src="" alt="empty-cart-logo" className="" />
 
             <NavLink to="/shd" className="">
               <button className="w-auto bg-lightSlate-gray text-white px-4 py-2 rounded-md fixed bottom-main-btn left-6">Вернуться назад</button>
