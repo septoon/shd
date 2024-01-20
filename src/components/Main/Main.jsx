@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const Main = () => {
   return (
-    <div className="pt-6 px-6 w-full h-screen bg-main text-white bg-cover bg-center bg-fixed">
+    <div className="pt-6 px-6 w-full h-[calc(100vh-80px)] overflow-hidden bg-main text-white bg-cover bg-no-repeat bg-center bg-fixed">
       <h1 className=" text-2xl font-semibold">Главная</h1>
       <div className='flex flex-col justify-around h-[50%]'>
         <div className=" flex flex-col">
@@ -21,14 +21,14 @@ const Main = () => {
           <span className='text-xl font-semibold'>г. Алушта</span>
           <span className='text-xl font-semibold'>ул. Ленина 13</span>
         </div>
-        <div className="flex flex-col ">
-          <span className='text-xl'>Стоимость доставки:</span>
+        <div className="flex flex-col">
+          <span className='text-xl shadow'>Стоимость доставки:</span>
           <span className='text-xl font-semibold'>200р</span>
         </div>
       </div>
-        <div className="flex flex-col ">
+        <div className="flex flex-col w-aut fixed bottom-main-btn left-6">
           <span className='text-xl'>Заказать можно по номеру:</span>
-          <span className="font-bold text-lightSlate-gray text-xl">
+          <span className="font-extrabold text-white text-xl">
             <a href="tel:+79788796220">+7 (978) 879-62-20</a>
           </span>
         </div>

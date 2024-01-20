@@ -8,7 +8,7 @@ module.exports = {
       backgroundImage: theme => ({
         'shd': "url('./assets/img/bg-shd.jpg')",
         'menu': "url('./assets/img/menu-icon.png')",
-        'main': "url('./assets/img/bg-main.JPG')"
+        'main': "url('./assets/img/bg-main2.JPG')"
       }),
       backgroundPosition: {
         bottom: 'bottom',
