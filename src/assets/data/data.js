@@ -9,7 +9,7 @@ export const data = {
       id: 0
     },
     {
-      image: "https://i.ibb.co/vdSnzQ1/IMAGE-2024-01-17-13-08-10.jpg",
+      image: "https://i.ibb.co/nkB0c7j/IMG-3928.jpg",
       name: "Ассорти из марин. овощей",
       serving: "300 г",
       price: 420,
@@ -17,7 +17,7 @@ export const data = {
       id: 1
     },
     {
-      image: "https://i.ibb.co/tLws4y8/IMAGE-2024-01-17-13-14-49.jpg",
+      image: "https://i.ibb.co/7VZhPMg/IMG-3934.jpg",
       name: "Ассорти из овощей",
       serving: "300 г",
       price: 420,
@@ -25,7 +25,7 @@ export const data = {
       id: 90
     },
     {
-      image: "https://i.ibb.co/zZPr9CJ/IMAGE-2024-01-17-13-08-48.jpg",
+      image: "https://i.ibb.co/64cDcSX/IMG-3930.jpg",
       name: "Семга в лаваше",
       serving: "250 г",
       price: 580,
@@ -33,7 +33,7 @@ export const data = {
       id: 2
     },
     {
-      image: "https://i.ibb.co/hBWr3kB/IMAGE-2024-01-17-13-09-39.jpg",
+      image: "https://i.ibb.co/Wzy328C/IMG-5233.jpg",
       name: "Баклажановые рулетики с грец. орех.",
       serving: "4 шт",
       price: 440,
@@ -41,7 +41,7 @@ export const data = {
       id: 3
     },
     {
-      image: "https://i.ibb.co/x6d1X1D/IMAGE-2024-01-19-16-22-34.jpg",
+      image: "https://i.ibb.co/CQcBxQ0/IMG-3932.jpg",
       name: "Индейка в лаваше",
       serving: "2 шт",
       price: 470,
@@ -59,7 +59,7 @@ export const data = {
       id: 5
     },
     {
-      image: "https://i.ibb.co/S3GfbVF/IMAGE-2024-01-19-16-21-15.jpg",
+      image: "https://i.ibb.co/WBQrqsp/IMG-3936.jpg",
       name: "Сыр Чеддер",
       serving: "150/80 г",
       price: 560,
@@ -67,7 +67,7 @@ export const data = {
       id: 6
     },
     {
-      image: "",
+      image: "https://i.ibb.co/RgZtMCB/IMG-3940.jpg",
       name: "Рапаны в сливочном соусе",
       serving: "200/50 г",
       price: 590,
@@ -75,15 +75,15 @@ export const data = {
       id: 7
     },
     {
-      image: "https://i.ibb.co/sg4RcqP/IMAGE-2024-01-19-16-21-58.jpg",
-      name: "Ланустины в чесночном соусе",
+      image: "https://i.ibb.co/gg9gt9g/IMG-3942.jpg",
+      name: "Лангустины в чесночном соусе",
       serving: "4 шт",
       price: 690,
       isChange: false, 
       id: 8
     },
     {
-      image: "",
+      image: "https://i.ibb.co/s67GgMT/IMG-3937.jpg",
       name: "Мидии в сливочном соусе",
       serving: "200/50 г",
       price: 590,
@@ -109,21 +109,21 @@ export const data = {
   ],
   "Салаты": [
     {
-      image: "https://i.ibb.co/6XtSbxH/IMAGE-2024-01-17-13-10-19.jpg",
+      image: "https://i.ibb.co/Km8C2XH/IMG-5256.jpg",
       name: "Цезарь с индейкой",
       price: 490,
       isChange: false, 
       id: 12
     },
     {
-      image: "https://i.ibb.co/V2NYQGw/IMAGE-2024-01-17-13-11-04.jpg",
+      image: "https://i.ibb.co/M8LRspK/IMG-5257.jpg",
       name: "Цезарь с креветками",
       price: 620,
       isChange: false, 
       id: 13
     },
     {
-      image: "https://i.ibb.co/xmB2P8T/IMAGE-2024-01-17-13-11-26.jpg",
+      image: "https://i.ibb.co/fHC3DdG/IMG-5259.jpg",
       name: "Цезарь с лососем",
       price: 620,
       isChange: false, 
