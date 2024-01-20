@@ -11,7 +11,7 @@ const Main = () => {
           <span className='text-2xl font-semibold'>с 11:00 до 23:00 </span>
         </div>
         <NavLink to="/menu-items" className="w-full">
-          <button className="w-auto bg-lightSlate-gray text-white text-xl px-4 py-2 rounded-2xl ">
+          <button className="w-auto bg-lightSlate-gray text-white text-xl px-4 py-2 rounded-2xl animate-pulse">
             Перейти в меню
           </button>
         </NavLink>

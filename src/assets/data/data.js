@@ -175,7 +175,7 @@ export const data = {
   ],
   "Паста": [
     {
-      image: "https://i.ibb.co/g7ChCZh/IMG-3975.jpg",
+      image: "https://i.ibb.co/y5tMXwZ/IMG-3975.jpg",
       name: "Фетучини с лососем",
       price: 620,
       isChange: false, 
@@ -189,7 +189,7 @@ export const data = {
       id: 22
     },
     {
-      image: "https://i.ibb.co/F7DWVhn/IMG-3986.jpg",
+      image: "https://i.ibb.co/jD2NF0f/IMG-3986.jpg",
       name: "Индейка и грибы",
       price: 490,
       isChange: false, 
@@ -212,7 +212,7 @@ export const data = {
   ],
   "Гарниры": [
     {
-      image: "https://i.ibb.co/Fsw3zZv/potato-free-nov.jpg",
+      image: "https://i.ibb.co/vHw5gHw/IMG-3998-2.jpg",
       name: "Картофель фри",
       serving: "200 г",
       price: 200,
@@ -365,7 +365,7 @@ export const data = {
       id: 43
     },
     {
-      image: "https://i.ibb.co/PW9m5g6/images.jpg",
+      image: "https://i.ibb.co/ZL0z4S6/IMG-4004.jpg",
       name: "Чизчейк",
       price: 350,
       isChange: false, 

@@ -33,7 +33,7 @@ const Order = ({
 
   const dishesList = items.map((i) => {
     const count = countById(totalItems, i.id, i.activeSize);
-    const value = `${i.name} | ${i.serving} | ${i.price} ₽ | x ${count}шт.`;
+    const value = `${i.name} | ${i.serving ? i.serving + ' |': ''} | ${i.price} ₽ | x ${count}шт.`;
     return value;
   });
   return (

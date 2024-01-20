@@ -15,6 +15,10 @@ module.exports = {
       'title': '26px'
     },
     extend: {
+      fontFamily: {
+        pacifico: ['Pacifico', 'cursive'],
+        comfortaa: ['Comfortaa', 'sans-serif'],
+      },
       backgroundImage: theme => ({
         'shd': "url('./assets/img/bg-shd.jpg')",
         'menu': "url('./assets/img/menu-icon.png')",
