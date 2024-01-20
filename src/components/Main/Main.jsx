@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 const Main = () => {
   return (
     <div className="pt-6 px-6 w-full flex flex-col h-[calc(100vh-80px)] overflow-hidden bg-main text-white bg-cover bg-no-repeat bg-center bg-fixed">
-      <h1 className=" text-2xl font-semibold">Главная</h1>
       <div className='flex flex-col justify-around h-[50%] mt-8'>
         <div className=" flex flex-col  mt-8">
           <span className='text-xl italic'>Доставка вкусного шашлыка в Алуште</span>
