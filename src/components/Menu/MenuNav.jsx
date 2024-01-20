@@ -24,7 +24,7 @@ const MenuNav = ({ data, setItem, isItemsOpen, setIsItemsOpen, toggleMenuItems, 
           </button>
         </div>
         {Object.keys(data).map((category, index) => (
-          <NavLink to="/shd" key={index}>
+          <NavLink to="/menu" key={index}>
             <button
               className="text-dark text-md font-semibold w-full"
               onClick={(e) => {
