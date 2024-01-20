@@ -6,22 +6,22 @@ const Main = () => {
     <div className="pt-6 px-6 w-full flex flex-col h-[calc(100vh-80px)] overflow-hidden bg-main text-white bg-cover bg-no-repeat bg-center bg-fixed">
       <h1 className=" text-2xl font-semibold">Главная</h1>
       <div className='flex flex-col justify-around h-[50%] mt-8'>
-        <div className=" flex flex-col">
+        <div className=" flex flex-col  mt-8">
           <span className='text-xl italic'>Доставка вкусного шашлыка в Алуште</span>
           <span className='text-xl font-semibold my-3'>Бесплатная доставка от 1000 рублей</span>
           <span className='text-2xl font-semibold'>с 11:00 до 23:00 </span>
         </div>
-        <NavLink to="/menu" className="w-full ">
+        <NavLink to="/menu" className="w-full  mt-8">
           <button className="w-auto bg-lightSlate-gray text-white text-xl px-4 py-2 rounded-2xl ">
             Перейти в меню
           </button>
         </NavLink>
-        <div className="w-full flex flex-col ">
+        <div className="w-full flex flex-col  mt-8">
           <span className='text-xl'>Адрес:</span>
           <span className='text-xl font-semibold'>г. Алушта</span>
           <span className='text-xl font-semibold'>ул. Ленина 13</span>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col  mt-8">
           <span className='text-xl shadow'>Стоимость доставки:</span>
           <span className='text-xl font-semibold'>200р</span>
         </div>

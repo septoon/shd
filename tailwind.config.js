@@ -46,6 +46,7 @@ module.exports = {
       'orange': '#FFA500',
       'light-gray': '#D3D3D3',
       'lightSlate-gray': '#778899',
+      'DimGray': '#696969',
     }
   },
   plugins: [],
