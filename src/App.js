@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header"
 import Menu from "./components/Menu/Menu";
-import Gallery from "./components/Gallery/Gallery";
 import Cart from "./components/Cart/Cart";
 import { useState } from "react";
 import Navbar from "./components/NavBar/Navbar";
@@ -47,7 +46,6 @@ function App() {
           <Routes>
             <Route exact path="/shd" element={<Main />} />
             <Route path="/menu" element={<Menu item={item} catalogName={catalogName} />} />
-            <Route path="/gallery" element={<Gallery />} />
             <Route path="/delivery" element={<Delivery />} />
             <Route path="/contacts" element={<Contacts />} />
             <Route path="/cart" element={<Cart isOpen={isOpen} />} />

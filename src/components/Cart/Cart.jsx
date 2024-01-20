@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { clearDishCartAC, removeDishAC } from '../../redux/cart-reducer';
 import CartItem from './CartItem';
-import Form from './Form';
 import Trash from '../../assets/img/trash.svg'
 
 import axios from 'axios';
