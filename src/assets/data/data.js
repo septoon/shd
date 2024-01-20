@@ -51,7 +51,7 @@ export const data = {
   ],
   "Горячие закуски": [
     {
-      image: "",
+      image: "https://i.ibb.co/yN4VnTY/IMG-3921.jpg",
       name: "Мидии в створках",
       serving: "200/80 г",
       price: 620,
@@ -130,7 +130,7 @@ export const data = {
       id: 14
     },
     {
-      image: "https://i.ibb.co/MhYSRq8/IMAGE-2024-01-17-13-11-49.jpg",
+      image: "https://i.ibb.co/6Jjhzvy/IMG-3925.jpg",
       name: "Греческий с творожным сыром",
       price: 410,
       isChange: false, 
@@ -189,7 +189,7 @@ export const data = {
       id: 22
     },
     {
-      image: "https://i.ibb.co/wWv7PYR/IMAGE-2024-01-17-13-17-39.jpg",
+      image: "https://i.ibb.co/vZNsTtC/IMG-3919.jpg",
       name: "Индейка и грибы",
       price: 490,
       isChange: false, 

@@ -28,7 +28,7 @@ const MenuItem = ({
     <div className="w-full md:w-1/2 lg:w-1/3 flex flex-row items-center rounded-10 mb-5 bg-white rounded-md shadow-xl">
       <img
         src={image ? image : pic}
-        className="rounded-md min-w-40 min-h-28 max-w-40 max-h-28"
+        className="rounded-md min-w-40 min-h-28 max-w-40 max-h-28 object-cover"
         alt="pic"
       />
       <div className='flex flex-col w-full h-full justify-around pl-2'>
