@@ -18,8 +18,7 @@ function App() {
   const [item, setItem] = useState(data[firstKey]);
   
   const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = (e) => {
-    console.log(e.target)
+  const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
