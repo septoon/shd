@@ -18,7 +18,8 @@ function App() {
   const [item, setItem] = useState(data[firstKey]);
   
   const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => {
+  const toggleMenu = (e) => {
+    console.log(e.target)
     setIsOpen(!isOpen);
   };
 
@@ -50,7 +51,7 @@ function App() {
             <Route path="/menu" element={<Menu item={item} catalogName={catalogName} />} />
             <Route path="/delivery" element={<Delivery />} />
             <Route path="/contacts" element={<Contacts />} />
-            <Route path="/cart" element={<Cart isOpen={isOpen} />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
       </div>
     </div>

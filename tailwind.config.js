@@ -14,6 +14,16 @@ module.exports = {
       '5xl': '3.052rem',
       'title': '26px'
     },
+    fontWeight: {
+      thin: '100',
+      light: '300',
+      normal: '400',
+      medium: '500',
+      semibold: '600',
+      bold: '700',
+      extrabold: '800',
+      black: '900',
+    },
     extend: {
       fontFamily: {
         pacifico: ['Pacifico', 'cursive'],
@@ -22,7 +32,7 @@ module.exports = {
       backgroundImage: theme => ({
         'shd': "url('./assets/img/bg-shd.jpg')",
         'menu': "url('./assets/img/menu-icon.png')",
-        'main': "url('./assets/img/bg-main2.JPG')"
+        'main': "url('./assets/img/bg-main2.JPG')",
       }),
       backgroundPosition: {
         bottom: 'bottom',

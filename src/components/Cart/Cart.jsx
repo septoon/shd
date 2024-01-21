@@ -4,11 +4,12 @@ import { NavLink } from 'react-router-dom';
 import { clearDishCartAC, removeDishAC } from '../../redux/cart-reducer';
 import CartItem from './CartItem';
 import Trash from '../../assets/img/trash.svg'
+import CartIcon from '../../assets/img/cart-logo.svg'
 
 import axios from 'axios';
 import Order from './Order';
 
-const Cart = ({isOpen}) => {
+const Cart = () => {
   const dispatch = useDispatch();
 
   const { items, totalCount, totalPrice } = useSelector(({ cart }) => ({
@@ -78,7 +79,7 @@ const Cart = ({isOpen}) => {
   };
   return (
     <div className="pt-6 w-full">
-      <h1 className="pl-6 text-title font-semibold">Корзина</h1>
+      <h1 className="pl-6 text-title font-bold font-comfortaa">Корзина</h1>
       {isOrder && (
         <Order
           setIsOrder={setIsOrder}
@@ -121,7 +122,7 @@ const Cart = ({isOpen}) => {
               })}
             </div>
             <div className="">
-              <div className={isOpen ? "translate-y-screen-20 transition-all" : "fixed bottom-[12%] left-0 w-full flex flex-col justify-between px-6 transition-all"}>
+              <div className="fixed bottom-[12%] left-0 w-full flex flex-col justify-between px-6 transition-all">
                 <span>
                   {' '}
                   Всего блюд: <b className='font-bold text-lg text-lightSlate-gray'>{totalCount} шт.</b>{' '}
@@ -142,13 +143,13 @@ const Cart = ({isOpen}) => {
           </>
         ) : (
           // Если корзина пустая
-          <div className="px-6 pt-6">
-            <h2 className='mb-6'>Корзина пустая</h2>
-            <p>
+          <div className="px-6 pt-6 w-full flex flex-col items-center justify-around">
+            <h2 className='mb-6 self-start'>Корзина пустая</h2>
+            <img src={CartIcon} className='opacity-50 w-1/2' alt="cart" />
+            <span className='mt-6'>
               Вероятней всего, вы еще ничего не заказали. Для того, чтобы сделать заказ, перейди на
               страницу меню.
-            </p>
-
+            </span>
             <NavLink to="/menu" className="">
               <button className="w-auto bg-lightSlate-gray text-white px-4 py-2 rounded-md fixed bottom-main-btn left-6">Вернуться назад</button>
             </NavLink>

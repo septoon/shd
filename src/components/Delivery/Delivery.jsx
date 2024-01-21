@@ -6,7 +6,7 @@ const Delivery = () => {
   
   return (
     <div className='pt-6 w-full'>
-      <h1 className="pl-6 text-title font-semibold mb-8">Доставка и оплата</h1>
+      <h1 className="pl-6 text-title font-bold font-comfortaa mb-8">Доставка и оплата</h1>
 
       <div>
         <iframe 
