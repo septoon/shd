@@ -1,4 +1,6 @@
 import React from 'react'
+import Cash from '../../assets/img/cash.svg'
+import CreditCard from '../../assets/img/credit-card.svg'
 
 const Delivery = () => {
 
@@ -21,13 +23,22 @@ const Delivery = () => {
           <b>ЕСЛИ НАШ МЕНЕДЖЕР НЕ СВЯЗАЛСЯ С ВАМИ В ТЕЧЕНИЕ 10 МИНУТ</b> по указанному вами номеру телефона, подтверждение о приеме заказа – ваш заказ считается не принятым в обработку. В этом случае вам необходимо проконтролировать состояние заказа, позвонив по телефону
           <a href="tel:+79788796220"><b>+7 (978) 879-62-20</b></a>.
         </span>
+        <span className='mb-6 font-bold'>Оплата заказа происходит двумя способами:</span>
+        <div className='w-full flex items-center mb-3'>
+          <img src={Cash} className='w-8 mr-6' alt="cash" />
+          <span className='font-bold'>Наличными</span>
+        </div>
+        <div className='w-full flex items-center'>
+          <img src={CreditCard}  className='w-8 mr-6' alt="credit card" />
+          <span className='font-bold'>Банковской картой</span>
+        </div>
       </div>
-      <div className='w-full flex flex-col items-center'>
-        <h2 className='text-xl mb-3 font-semibold self-start font-comfortaa pl-3'>Зона доставки:</h2>
+      <div className='w-full px-3 flex flex-col items-center'>
+        <h2 className='text-xl mb-3 font-semibold self-start font-comfortaa'>Зона доставки:</h2>
         <iframe 
           title='Delivery zone'
           src="https://yandex.ru/map-widget/v1/?um=constructor%3Acd42b53bf4349bd807ddc17e63d2786d0e1586d2e4146b363655281f190a2f1a&amp;source=constructor"
-          className='h-[478px] w-[90%]'
+          className='h-[478px] w-full'
           frameborder="0">
        </iframe>
       </div>
