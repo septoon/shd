@@ -39,7 +39,7 @@ const Order = ({
     return value;
   });
   return (
-    <div className="fixed top-0 left-0 right-0 bottom-0 bg-white z-50">
+    <div className="fixed top-0 left-0 right-0 bottom-0  bg-white z-50">
       <div className="">
         <div className="h-auto w-full pr-6 pt-3 flex justify-end">
           <button onClick={() => setIsOrder(false)}>
@@ -57,8 +57,9 @@ const Order = ({
           </button>
         </div>
         <div className="w-full flex justify-center">
+          <div className='bg-light-gray rounded-md'>
           <button
-            className={`text-white w-24 py-1 rounded-md ${
+            className={`text-white w-24 py-1 rounded-md transition-all ${
               orderType === 'Доставка' ? 'bg-lightSlate-gray' : 'bg-light-gray'
             }`}
             onClick={() => {
@@ -67,7 +68,7 @@ const Order = ({
             Доставка
           </button>
           <button
-            className={`text-white w-24 py-1 rounded-md ${
+            className={`text-white w-24 py-1 rounded-md transition-all ${
               orderType === 'Самовывоз' ? 'bg-lightSlate-gray' : 'bg-light-gray'
             }`}
             onClick={() => {
@@ -75,8 +76,9 @@ const Order = ({
             }}>
             Самовывоз
           </button>
+          </div>
         </div>
-        <h1 className="pl-6 text-2xl font-semibold mb-4">Ваш заказ:</h1>
+        <h1 className="pl-3 text-xl font-bold mb-4">Ваш заказ:</h1>
         <div className="px-2">
           <div className="max-h-32 overflow-y-auto flex flex-col">
             {items.map((i) => {
