@@ -40,7 +40,7 @@ const Order = ({
   });
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0  bg-white z-50">
-      <div className="">
+      <div className="h-full">
         <div className="h-auto w-full pr-6 pt-3 flex justify-end">
           <button onClick={() => setIsOrder(false)}>
             <svg
@@ -79,27 +79,27 @@ const Order = ({
           </div>
         </div>
         <h1 className="pl-3 text-xl font-bold mb-4">Ваш заказ:</h1>
-        <div className="px-2">
-          <div className="max-h-32 overflow-y-auto flex flex-col">
+        <div className="px-2 flex flex-col h-full">
+          <div className="max-h-32 overflow-y-auto flex flex-col mb-6 border-dashed border p-2 rounded-lg">
             {items.map((i) => {
               const count = countById(totalItems, i.id, i.activeSize);
               return (
-                <span key={i.id} className="w-full text-[10px]">{`${i.name} | ${
+                <span key={i.id} className="w-full text-sm">{`${i.name} | ${
                   i.serving ? i.serving + ' |' : ''
                 } ${i.price} ₽ | x ${count}шт.`}</span>
               );
             })}
           </div>
-          <div className="flex flex-col">
-            <span>
+          <div className="flex flex-col ">
+            <span className='mb-6'>
               На сумму: <b className="text-lightSlate-gray">{totalPrice}</b> ₽
             </span>
             {orderType === 'Доставка' && (
               <div className="flex flex-col">
-                <label>Введите ваш адрес:</label>
+                <label className='mb-1'>Введите ваш адрес:</label>
                 <input
                   required
-                  className="bg-transparent border-0"
+                  className="bg-light-gray w-1/2 border-0 border-md p-2"
                   onChange={handleAddressChange}
                   name="address"
                   placeholder="ул. Ленина, 13"
@@ -107,11 +107,12 @@ const Order = ({
               </div>
             )}
             <label>Введите ваш номер телефона:</label>
-            <div className="inp_valid">
+            <div className="mb-3">
               <input
                 required
-                className="order_input"
+                className="bg-light-gray w-1/2 p-2"
                 onChange={handlePhoneNumChange}
+                maxlength="12"
                 placeholder="+7 (978) 879 62 20"
                 name="telephone"
                 type="tel"
@@ -119,7 +120,7 @@ const Order = ({
             </div>
             <div className="w-full">
               <input
-                className="w-full"
+                className="bg-light-gray w-1/2 border-0 border-md p-2"
                 name="comment"
                 onChange={handleCommentChange}
                 type="text"
@@ -127,7 +128,7 @@ const Order = ({
               />
             </div>
             {orderType === 'Доставка' && (
-              <div className="flex flex-col" name="checkbox">
+              <div className="flex flex-col fixed bottom-[12dvh]" name="checkbox">
                 <label>Спооб оплаты:</label>
                 <div className="payment_method">
                   <input
