@@ -49,7 +49,7 @@ const Cart = () => {
   const onClickClearCart = () => {
     dispatch(clearDishCartAC());
   };
-
+  const [orderType, setOrderType] = React.useState('Доставка');
   const ordersCount = Math.floor(Math.random() * 99999999);
 
   const sendOrder = async (orderType, address, phoneNumber, comment, pizzas, pay) => {
@@ -90,6 +90,8 @@ const Cart = () => {
           totalCount={totalCount}
           totalPrice={totalPrice}
           sendOrder={sendOrder}
+          orderType={orderType}
+          setOrderType={setOrderType}
         />
       )}
       <div className="">

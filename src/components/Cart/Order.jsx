@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 const Order = ({
   setIsOrder,
   items,
   countById,
   totalItems,
-  onClickClearCart,
+  orderType,
+  setOrderType,
   totalPrice,
   sendOrder,
 }) => {
@@ -31,15 +32,16 @@ const Order = ({
     setCommentValue(event.target.value);
   };
 
+
   const dishesList = items.map((i) => {
     const count = countById(totalItems, i.id, i.activeSize);
-    const value = `${i.name} | ${i.serving ? i.serving + ' |': ''} | ${i.price} ₽ | x ${count}шт.`;
+    const value = `${i.name} | ${i.serving ? i.serving + ' |' : ''} | ${i.price} ₽ | x ${count}шт.`;
     return value;
   });
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 bg-white z-50">
       <div className="">
-        <div className='h-auto w-full pr-6 pt-3 flex justify-end'>
+        <div className="h-auto w-full pr-6 pt-3 flex justify-end">
           <button onClick={() => setIsOrder(false)}>
             <svg
               className="h-8 w-8 text-dark"
@@ -54,29 +56,54 @@ const Order = ({
             </svg>
           </button>
         </div>
+        <div className="w-full flex justify-center">
+          <button
+            className={`text-white w-24 py-1 rounded-md ${
+              orderType === 'Доставка' ? 'bg-lightSlate-gray' : 'bg-light-gray'
+            }`}
+            onClick={() => {
+              setOrderType('Доставка');
+            }}>
+            Доставка
+          </button>
+          <button
+            className={`text-white w-24 py-1 rounded-md ${
+              orderType === 'Самовывоз' ? 'bg-lightSlate-gray' : 'bg-light-gray'
+            }`}
+            onClick={() => {
+              setOrderType('Самовывоз');
+            }}>
+            Самовывоз
+          </button>
+        </div>
         <h1 className="pl-6 text-2xl font-semibold mb-4">Ваш заказ:</h1>
         <div className="px-2">
-          <div className="max-h-20vh overflow-y-auto flex flex-col">
+          <div className="max-h-32 overflow-y-auto flex flex-col">
             {items.map((i) => {
               const count = countById(totalItems, i.id, i.activeSize);
               return (
-               
-                <span key={i.id} className="w-full text-xs">{`${i.name} | ${i.serving ? i.serving + ' |': ''} ${i.price} ₽ | x ${count}шт.`}</span>
+                <span key={i.id} className="w-full text-[10px]">{`${i.name} | ${
+                  i.serving ? i.serving + ' |' : ''
+                } ${i.price} ₽ | x ${count}шт.`}</span>
               );
             })}
           </div>
           <div className="flex flex-col">
-            <span>На сумму: <b className='text-lightSlate-gray'>{totalPrice}</b> ₽</span>
-            <label>Введите ваш адрес:</label>
-            <div className="inp_valid">
-              <input
-                required
-                className="bg-transparent border-0"
-                onChange={handleAddressChange}
-                name="address"
-                placeholder="ул. Ленина, 13"
-              />
-            </div>
+            <span>
+              На сумму: <b className="text-lightSlate-gray">{totalPrice}</b> ₽
+            </span>
+            {orderType === 'Доставка' && (
+              <div className="flex flex-col">
+                <label>Введите ваш адрес:</label>
+                <input
+                  required
+                  className="bg-transparent border-0"
+                  onChange={handleAddressChange}
+                  name="address"
+                  placeholder="ул. Ленина, 13"
+                />
+              </div>
+            )}
             <label>Введите ваш номер телефона:</label>
             <div className="inp_valid">
               <input
@@ -88,51 +115,60 @@ const Order = ({
                 type="tel"
               />
             </div>
-            <div className='w-full'>
+            <div className="w-full">
               <input
-                className='w-full'
+                className="w-full"
                 name="comment"
                 onChange={handleCommentChange}
                 type="text"
                 placeholder="Например: сок мультифрукт, вода без газа и т.д.."
               />
             </div>
-            <label>Спооб оплаты:</label>
-            <div className="payment" name="checkbox">
-              <div className="payment_method">
-                <input
-                  type="radio"
-                  onChange={changeValue}
-                  defaultValue="Наличные"
-                  name="cash"
-                  id="cash"
-                  checked={payValue === 'Наличные' ? true : false}
-                />{' '}
-                <label className="label_pay" htmlFor="cash">
-                  Наличные
-                </label>
+            {orderType === 'Доставка' && (
+              <div className="flex flex-col" name="checkbox">
+                <label>Спооб оплаты:</label>
+                <div className="payment_method">
+                  <input
+                    type="radio"
+                    onChange={changeValue}
+                    defaultValue="Наличные"
+                    name="cash"
+                    id="cash"
+                    checked={payValue === 'Наличные' ? true : false}
+                  />{' '}
+                  <label className="label_pay" htmlFor="cash">
+                    Наличные
+                  </label>
+                </div>
+                <div className="payment_method">
+                  <input
+                    type="radio"
+                    onChange={changeValue}
+                    defaultValue="Карта"
+                    name="cart"
+                    id="cart"
+                    checked={payValue === 'Карта' ? true : false}
+                  />{' '}
+                  <label className="label_pay" htmlFor="cart">
+                    Карта
+                  </label>
+                </div>
               </div>
-              <div className="payment_method">
-                <input
-                  type="radio"
-                  onChange={changeValue}
-                  defaultValue="Карта"
-                  name="cart"
-                  id="cart"
-                  checked={payValue === 'Карта' ? true : false}
-                />{' '}
-                <label className="label_pay" htmlFor="cart">
-                  Карта
-                </label>
-              </div>
-            </div>
+            )}
           </div>
           <button
             type="submit"
             disabled={!address}
             className="w-auto bg-lightSlate-gray text-white px-4 py-2 rounded-md fixed bottom-main-btn left-6"
             onClick={() => {
-              sendOrder('Доставка', address, phoneNum, commentValue, dishesList.toString(), payValue)
+              sendOrder(
+                orderType,
+                address,
+                phoneNum,
+                commentValue,
+                dishesList.toString(),
+                payValue,
+              );
               setTimeout(() => {
                 setIsOrder(false);
               }, 2000);
@@ -143,6 +179,6 @@ const Order = ({
       </div>
     </div>
   );
-}
+};
 
-export default Order
+export default Order;
