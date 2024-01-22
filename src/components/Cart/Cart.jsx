@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { clearDishCartAC, removeDishAC } from '../../redux/cart-reducer';
@@ -41,7 +41,7 @@ const Cart = () => {
     }, 0);
   };
 
-  const [isOrder, setIsOrder] = React.useState(false);
+  const [isOrder, setIsOrder] = useState (false);
 
   const onClickRemoveDish = (dishObj) => {
     dispatch(removeDishAC(dishObj));
@@ -49,7 +49,7 @@ const Cart = () => {
   const onClickClearCart = () => {
     dispatch(clearDishCartAC());
   };
-  const [orderType, setOrderType] = React.useState('Доставка');
+  const [orderType, setOrderType] = useState('Доставка');
   const ordersCount = Math.floor(Math.random() * 99999999);
 
   const sendOrder = async (orderType, address, phoneNumber, comment, pizzas, pay) => {

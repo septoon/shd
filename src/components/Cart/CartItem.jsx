@@ -21,13 +21,13 @@ const CartItem = ({
     onClickRemoveDish(dishObj);
   };
   return (
-    <div className="h-20 px-1.5 flex justify-between items-center mb-2 bg-white rounded-xl">
+    <div className="h-20 px-1.5 flex justify-between items-center mb-2 bg-white font-comfortaa rounded-xl">
       <div className="cart__item-img">
         <img className="min-w-10 max-w-10 max-h-8 rounded-md" src={image ? image : pic} alt="картинка" />
       </div>
       <div className="flex flex-col w-1/3">
         <span className='text-[10px] '>{name}</span>
-        <span className='text-xs'>{serving}</span>
+        <span className='text-xs opacity-40'>{serving}</span>
       </div>
       <div className="">
         <span>{countById}шт.</span>
