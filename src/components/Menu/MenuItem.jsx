@@ -6,6 +6,7 @@ const MenuItem = ({
   image,
   name,
   serving,
+  options,
   price,
   isChange,
   onClickAddDish,
@@ -19,6 +20,7 @@ const MenuItem = ({
       name,
       image,
       serving,
+      options,
       price,
     };
     onClickAddDish(obj);
@@ -39,7 +41,10 @@ const MenuItem = ({
           <span className='text-metal'>{serving ? serving : ``}</span>
         </div>
         <div className='w-full flex flex-row justify-between items-center pr-2'>
-          <span className='font-bold text-lightSlate-gray'>{price} ₽</span>
+          <div className='flex flex-col'>
+            {options ? (<span  className='font-comfortaa text-sm'>{options}</span>) : ``}
+            <span className='font-bold text-lightSlate-gray'>{price} ₽</span>
+          </div>
           <button className=' mt-0 w-auto h-auto  bg-lightSlate-gray active:bg-light-gray focus:outline-none  text-white rounded-md py-1 px-2 ' onClick={onAddDishes}>В корзину</button>
         </div>
       </div>

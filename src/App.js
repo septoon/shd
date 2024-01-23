@@ -33,11 +33,9 @@ function App() {
     setCatalogName(catalog)
   }
 
-  const appStyle = "w-full flex flex-col items-center relative pt-20"
-
   return (
-    <div className="bg-shd w-full bg-cover bg-center bg-fixed min-h-screen">
-      <div className={isOpen ? appStyle + " h-screen overflow-y-hidden" : appStyle}>
+    <div className='bg-shd w-full flex justify-center bg-cover bg-center bg-fixed min-h-screen'>
+      <div className="w-full max-w-[900px] flex flex-col items-center relative pt-20">
         <Header toggleMenu={toggleMenu} setIsOpen={setIsOpen} isOpen={isOpen} />
         <Navbar toggleMenu={toggleMenu} isOpen={isOpen} />
           <MenuBtn toggleMenuItems={toggleMenuItems} />

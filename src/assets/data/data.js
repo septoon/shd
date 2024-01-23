@@ -244,15 +244,193 @@ export const data = {
       id: 29
     },
   ],
+  "Порционный шашлык": [
+    {
+      image: "",
+      name: "Люля из индейки",
+      serving: "200 г",
+      price: 370,
+      isChange: false, 
+      id: 50
+    },
+    {
+      image: "",
+      name: "Шашлык из свинины",
+      serving: "200 г",
+      price: 350,
+      isChange: false, 
+      id: 51
+    },
+    {
+      image: "",
+      name: "Шашлык из индейки",
+      serving: "200 г",
+      price: 400,
+      isChange: false, 
+      id: 52
+    },
+    {
+      image: "",
+      name: "Лангусты",
+      serving: "4 шт.",
+      price: 690,
+      isChange: false, 
+      id: 53
+    },
+  ],
   "Блюда на мангале": [
     {
-      image: "https://i.ibb.co/bP18RNX/IMAGE-2024-01-19-16-23-55.jpg",
+      image: "",
       name: "Овощной шашлык",
       options: "Цена за 100г",
-      serving: "100 г",
+      serving: 100,
       price: 150,
       isChange: false, 
-      id: 30
+      id: 60
+    },
+    {
+      image: "",
+      name: "Шампиньоны",
+      options: "Цена за 100г",
+      serving: 100,
+      price: 150,
+      isChange: false, 
+      id: 61
+    },
+    {
+      image: "",
+      name: "Стейк из свинины",
+      options: "Цена за 100г",
+      serving: 100,
+      price: 200,
+      isChange: false, 
+      id: 62
+    },
+    {
+      image: "",
+      name: "Ребра свиные",
+      options: "Цена за 100г",
+      serving: 100,
+      price: 220,
+      isChange: false, 
+      id: 63
+    },
+    {
+      image: "",
+      name: "Каре ягненка",
+      options: "Цена за 100г",
+      serving: 100,
+      price: 460,
+      isChange: false, 
+      id: 64
+    },
+    {
+      image: "",
+      name: "Стейк из телятины",
+      options: "Цена за 100г",
+      serving: 100,
+      price: 490,
+      isChange: false, 
+      id: 65
+    },
+    {
+      image: "",
+      name: "Мякоть из телятины",
+      options: "Цена за 100г",
+      serving: 100,
+      price: 490,
+      isChange: false, 
+      id: 66
+    },
+    {
+      image: "",
+      name: "Антрекот из телятины",
+      options: "Цена за 100г",
+      serving: 100,
+      price: 490,
+      isChange: false, 
+      id: 67
+    },
+    {
+      image: "",
+      name: "Стейк из индейки",
+      options: "Цена за 100г",
+      serving: 100,
+      price: 260,
+      isChange: false, 
+      id: 68
+    },
+    {
+      image: "",
+      name: "Ципленок на гриле",
+      options: "Цена за 100г",
+      serving: 100,
+      price: 240,
+      isChange: false, 
+      id: 69
+    },
+    {
+      image: "",
+      name: "Перепелка",
+      options: "Цена за 100г",
+      serving: 100,
+      price: 290,
+      isChange: false, 
+      id: 70
+    },
+    {
+      image: "",
+      name: "Речная форель",
+      options: "Цена за 100г",
+      serving: 100,
+      price: 390,
+      isChange: false, 
+      id: 71
+    },
+    {
+      image: "",
+      name: "Форель стейк",
+      options: "Цена за 100г",
+      serving: 100,
+      price: 540,
+      isChange: false, 
+      id: 72
+    },
+    {
+      image: "",
+      name: "Семга стейк",
+      options: "Цена за 100г",
+      serving: 100,
+      price: 540,
+      isChange: false, 
+      id: 73
+    },
+    {
+      image: "",
+      name: "Скумбрия",
+      options: "Цена за 100г",
+      serving: 100,
+      price: 220,
+      isChange: false, 
+      id: 74
+    },
+    {
+      image: "",
+      name: "Сибас",
+      options: "Цена за 100г",
+      serving: 100,
+      price: 390,
+      isChange: false, 
+      id: 75
+    },
+    {
+      image: "",
+      name: "Дорадо",
+      options: "Цена за 100г",
+      serving: 100,
+      price: 390,
+      isChange: false, 
+      id: 76
     },
   ],
   "Соусы": [
@@ -317,7 +495,15 @@ export const data = {
       id: 37
     },
     {
-      image: "https://i.ibb.co/cxLczZp/2b1u17ekr4h29ra1n5bse315vefdb63u.jpg",
+      image: "https://i.ibb.co/s97rjsn/kompot.jpg",
+      name: "Компот в ассортименте",
+      serving: "1л",
+      price: 420,
+      isChange: false, 
+      id: 43
+    },
+    {
+      image: "https://i.ibb.co/FxM7tBX/borjomi.jpg",
       name: "Боржоми",
       serving: "0.5л",
       price: 220,
@@ -325,7 +511,7 @@ export const data = {
       id: 38
     },
     {
-      image: "https://i.ibb.co/cgJx9Ng/Unknown.png",
+      image: "https://i.ibb.co/TBSmFSd/water.jpg",
       name: "Минеральная вода",
       serving: "0.5л",
       price: 140,
@@ -333,7 +519,7 @@ export const data = {
       id: 39
     },
     {
-      image: "https://i.ibb.co/SxV4pXr/150752-napitok-pepsi-gazirovannyi-500-ml.jpg",
+      image: "https://i.ibb.co/mJYbvCw/pepsi.jpg",
       name: "Пепси",
       serving: "0.5л",
       price: 190,
@@ -341,12 +527,20 @@ export const data = {
       id: 40
     },
     {
-      image: "https://i.ibb.co/FgRZT84/limonad.jpg",
+      image: "https://i.ibb.co/jz1JrMw/lemonad.jpg",
       name: "Крымский лимонад",
       serving: "0.5л",
       price: 180,
       isChange: false, 
       id: 41
+    },
+    {
+      image: "https://i.ibb.co/gtk7QMq/energy.jpg",
+      name: "Энергетик Крым",
+      serving: "0.5л",
+      price: 180,
+      isChange: false, 
+      id: 42
     },
   ],
   "Десерты": [

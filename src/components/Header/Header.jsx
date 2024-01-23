@@ -5,11 +5,11 @@ import { NavLink } from 'react-router-dom'
 
 const Header = ({toggleMenu, setIsOpen, isOpen}) => {
   return (
-    <div className="flex h-20 items-center fixed top-0 left-0 right-0 bg-dark z-50">
-      <NavLink to='/shd' onClick={() => setIsOpen(false)} className='flex flex-row justify-center w-full px-2'>
-        <img src={ShdTitle} alt="Шашлычный Дом" className='w-full' />
+    <div className="flex h-20 items-center fixed top-0 left-0 right-0 lg:px-[20%] bg-dark z-50">
+      <NavLink to='/shd' onClick={() => setIsOpen(false)} className='flex flex-row justify-start w-full md:w-1/2 lg:w-1/2 px-2'>
+        <img src={ShdTitle} alt="Шашлычный Дом" className='w-full max-w-[300px]' />
       </NavLink>
-        <img src={ShdLogo} alt="logo" className='h-14'/>
+        <img src={ShdLogo} alt="logo" className='h-14 self-center'/>
       <div className='w-1/2 flex justify-end pr-6'>
         {
           isOpen ? (

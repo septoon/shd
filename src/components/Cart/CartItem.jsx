@@ -8,7 +8,7 @@ const CartItem = ({
   name,
   serving,
   price,
-  count,
+  options,
   countById,
   onClickRemoveDish,
 }) => {
@@ -30,10 +30,17 @@ const CartItem = ({
         <span className='text-xs opacity-40'>{serving}</span>
       </div>
       <div className="">
-        <span>{countById}шт.</span>
+        {
+          options ? (
+            <span>{serving  * countById} г.</span>
+          ) : (
+            <span>{countById}шт.</span>
+          )
+        }
+        
       </div>
       <div className="">
-        <b>{price}₽</b>
+        <b>{price * countById}₽</b>
       </div>
       <div className="">
         <div className="" onClick={onRemoveDish}>

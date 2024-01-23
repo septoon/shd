@@ -112,7 +112,7 @@ const Order = ({
                 required
                 className="bg-light-gray w-1/2 p-2"
                 onChange={handlePhoneNumChange}
-                maxlength="12"
+                maxLength="12"
                 placeholder="+7 (978) 879 62 20"
                 name="telephone"
                 type="tel"
