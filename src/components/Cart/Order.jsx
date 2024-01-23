@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 
+import { InputMask } from 'primereact/inputmask';
+        
+
 const Order = ({
   setIsOrder,
   items,
@@ -13,6 +16,8 @@ const Order = ({
   const [address, setAddress] = useState('');
   const [phoneNum, setPhoneNum] = useState('');
   const [commentValue, setCommentValue] = useState('');
+
+  const [phoneMaskValue, setPhoneMaskValue] = useState();
 
   const [payValue, setPayValue] = useState('');
 
@@ -99,32 +104,28 @@ const Order = ({
                 <label className='mb-1'>Введите ваш адрес:</label>
                 <input
                   required
-                  className="bg-light-gray w-1/2 border-0 border-md p-2"
+                  className="mb-3 w-1/2 h-auto p-2 rounded-lg border-2 border-lightSlate-gray"
                   onChange={handleAddressChange}
                   name="address"
                   placeholder="ул. Ленина, 13"
                 />
               </div>
             )}
-            <label>Введите ваш номер телефона:</label>
-            <div className="mb-3">
-              <input
-                required
-                className="bg-light-gray w-1/2 p-2"
-                onChange={handlePhoneNumChange}
-                maxLength="12"
-                placeholder="+7 (978) 879 62 20"
-                name="telephone"
-                type="tel"
-              />
+            <label className='mb-1'>Введите ваш номер телефона:</label>
+            <div className="mb-3 w-1/2 h-auto p-2 rounded-lg border-2 border-lightSlate-gray">
+              <InputMask value={phoneMaskValue} onChange={(e) => {
+                setPhoneMaskValue(e.target.value)
+                handlePhoneNumChange(e)
+              }} mask="+7(999)999-99-99" placeholder="+7(978)879-62-20"/>
             </div>
-            <div className="w-full">
+            <div className="w-full flex flex-col">
+              <label className='mb-1'>Введите комментарий:</label>
               <input
-                className="bg-light-gray w-1/2 border-0 border-md p-2"
+                className="mb-3 w-1/2 h-auto p-2 rounded-lg border-2 border-lightSlate-gray"
                 name="comment"
                 onChange={handleCommentChange}
                 type="text"
-                placeholder="Например: сок мультифрукт, вода без газа и т.д.."
+                placeholder="Например: без лука"
               />
             </div>
             {orderType === 'Доставка' && (
