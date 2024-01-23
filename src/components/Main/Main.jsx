@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 const Main = () => {
   return (
-    <div className="px-6 w-full flex flex-col justify-center h-[calc(100dvh-80px)] overflow-y-hidden bg-main text-white bg-cover bg-no-repeat bg-center bg-fixed">
-      <div className='flex flex-col justify-around h-full'>
+    <div className="px-6 w-full flex flex-col justify-center f-full overflow-y-hidden bg-main text-white bg-cover bg-no-repeat bg-center bg-fixed">
+      <div className='flex flex-col justify-around h-[calc(100dvh-80px)]'>
         <div className=" flex flex-col">
           <span className='text-xl italic'>Доставка вкусного шашлыка в Алуште</span>
           <span className='text-xl font-semibold my-3'>Бесплатная доставка от 1000 рублей</span>
