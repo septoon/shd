@@ -11,6 +11,7 @@ import Contacts from "./components/About/Contacts.jsx";
 import Delivery from "./components/Delivery/Delivery.jsx";
 import Main from "./components/Main/Main.jsx";
 import MenuCards from "./components/Menu/MenuCards.jsx";
+import { Dialog } from "primereact/dialog";
 
 function App() {
   const firstKey = Object.keys(data)[0];
@@ -33,14 +34,24 @@ function App() {
     setCatalogName(catalog)
   }
 
+  const [navVisible, setNavVisible] = useState(false);
+  const [position, setPosition] = useState('center');
+
+  const showNav = (position) => {
+    setPosition(position);
+    setNavVisible(true);
+};
+
   return (
     <div className='bg-shd w-full flex justify-center bg-cover bg-center bg-fixed min-h-screen'>
       <div className="w-full max-w-[900px] flex flex-col items-center relative pt-20">
         <Header toggleMenu={toggleMenu} setIsOpen={setIsOpen} isOpen={isOpen} />
         <Navbar toggleMenu={toggleMenu} isOpen={isOpen} />
-          <MenuBtn toggleMenuItems={toggleMenuItems} />
+          <MenuBtn toggleMenuItems={toggleMenuItems} showNav={showNav} />
 
-          <MenuNav setItem={setItem} setIsOpen={setIsOpen} setIsItemsOpen={setIsItemsOpen} isItemsOpen={isItemsOpen} getCatalogName={getCatalogName} toggleMenuItems={toggleMenuItems} data={data} />
+          <Dialog header="Меню" visible={navVisible} position={position} style={{ width: '90vw' }} onHide={() => setNavVisible(false)} draggable={false} resizable={false}>
+            <MenuNav setItem={setItem} setNavVisible={setNavVisible} getCatalogName={getCatalogName} toggleMenuItems={toggleMenuItems} data={data} />
+          </Dialog>
 
           <Routes>
             <Route exact path="/shd" element={<Main />} />
