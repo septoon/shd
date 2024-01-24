@@ -84,7 +84,7 @@ const [loading, setLoading] = useState(false);
         }, 2000);
     };
   return (
-    <div className="fixed top-0 left-0 right-0 bottom-0  bg-white z-50">
+    <div className="fixed top-0 left-0 right-0 bottom-0 bg-white z-50">
       <div className="h-full">
         <div className="h-auto w-full pr-6 pt-3 flex justify-end">
           <button onClick={() => setIsOrder(false)}>
@@ -135,7 +135,7 @@ const [loading, setLoading] = useState(false);
               );
             })}
           </div>
-          <div className="flex flex-col ">
+          <div className="flex flex-col">
             <span className='mb-6'>
               На сумму: <b className="text-lightSlate-gray">{totalPrice}</b> ₽
             </span>
@@ -177,7 +177,7 @@ const [loading, setLoading] = useState(false);
                   placeholder="Например: без лука"/>
             </div>
             {orderType === 'Доставка' && (
-              <div className="flex flex-col fixed bottom-[12dvh]" name="checkbox">
+              <div className="flex flex-col mt-12 mb-8" name="checkbox">
                 <label>Спооб оплаты:</label>
                 <div className="payment_method">
                   <input
@@ -207,12 +207,12 @@ const [loading, setLoading] = useState(false);
                 </div>
               </div>
             )}
+            <Button label="Отправить" 
+              disabled={orderType === 'Доставка' ? !phoneMaskValue || !address : !phoneMaskValue} 
+              icon="pi pi-check" 
+              loading={loading}
+              onClick={load} iconPos="right" className=' w-[40%] px-4 py-2 f'/>
           </div>
-          <Button label="Отправить" 
-            disabled={orderType === 'Доставка' ? !phoneMaskValue || !address : !phoneMaskValue} 
-            icon="pi pi-check" 
-            loading={loading}
-            onClick={load} iconPos="right" className=' w-[40%] px-4 py-2 fixed bottom-main-btn left-6'/>
         </div>
       </div>
     </div>
