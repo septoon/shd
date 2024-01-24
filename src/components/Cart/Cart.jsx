@@ -53,14 +53,10 @@ const Cart = () => {
     setVisible(true);
   };
 
-  const showCheck = (position) => {
-    setPosition(position);
-    setIsOrderFinish(true);
-  };
-
   const footerContent = (
-    <div>
-        <Button label="Ok" className='py-2 px-4' icon="pi pi-check" onClick={() => setIsOrderFinish(false)} autoFocus />
+    <div className='flex justify-between items-center'>
+      <span className='text-sm text-left w-1/2'>В течение 10-ти минут с вами свяжется оператор, для подтверждения заказа.</span>
+      <Button label="Ok" className='py-2 px-4 h-10' icon="pi pi-check" onClick={() => setIsOrderFinish(false)} autoFocus />
     </div>
 );
 
