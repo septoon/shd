@@ -20,8 +20,13 @@ const OrderFinish = ({ orderValues, shortDate, shortTime }) => {
           <span className="mb-2">
             <b>Заказ:</b>
           </span>
-          <span className="text-sm mb-2">{orderValues.dishes}</span>
-          <span className="text-sm mb-2"><b>Сумма:</b> {orderValues.totalPrice}</span>
+          {orderValues.items.map((i) => {
+            const count = orderValues.countById(orderValues.totalItems, i.id, i.activeSize);
+            return (
+              <span key={i.id} className="w-full text-sm">{`${i.name} | ${i.price} ₽. | x ${count} шт.`}</span>
+            );
+          })}
+          <span className="my-2"><b>Сумма:</b> {orderValues.totalPrice} ₽</span>
           <span className="mb-2">
             <b>Дата:</b> {orderValues.checked ? shortDate : 'Сегодня'}
           </span>
@@ -46,8 +51,13 @@ const OrderFinish = ({ orderValues, shortDate, shortTime }) => {
           <span className="mb-2">
             <b>Заказ:</b>
           </span>
-          <span className="text-sm mb-2">{orderValues.dishes}</span>
-          <span className="text-sm mb-2"><b>Сумма:</b> {orderValues.totalPrice}</span>
+          {orderValues.items.map((i) => {
+            const count = orderValues.countById(orderValues.totalItems, i.id, i.activeSize);
+            return (
+              <span key={i.id} className="w-full text-sm">{`${i.name} | ${i.price} ₽. | x ${count} шт.`}</span>
+            );
+          })}
+          <span className="my-2"><b>Сумма:</b> {orderValues.totalPrice}  ₽</span>
           <span className="mb-2">
             <b>Дата:</b> {orderValues.checked ? shortDate : 'Сегодня'}
           </span>

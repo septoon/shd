@@ -90,7 +90,7 @@ const Cart = () => {
 
   const [orderValues, setOrderValues] = useState({})
 
-  const sendOrder = async (orderType, address, phoneNumber, comment, dishes, pay) => {
+  const sendOrder = async (orderType, address, phoneNumber, comment, dishes, items, countById, totalItems, pay) => {
     let message = orderType === 'Доставка' ? `
     Заказ # ${ordersCount}
     ${orderType}
@@ -124,6 +124,9 @@ const Cart = () => {
       comment, 
       dishes,
       totalPrice,
+      items,
+      countById, 
+      totalItems,
       pay
     })
     await axios.post(

@@ -96,12 +96,12 @@ const Order = ({
 
   const load = () => {
     setLoading(true);
-    sendOrder(orderType, address, phoneNum, commentValue, dishesList.toString(), payValue);
+    sendOrder(orderType, address, phoneNum, commentValue, dishesList.toString(), items, countById, totalItems, payValue);
     setTimeout(() => {
       setLoading(false);
       setVisible(false);
       setIsOrderFinish(true)
-    }, 2000);
+    }, 1000);
   };
   return (
     <div className="w-full h-full">
@@ -181,6 +181,7 @@ const Order = ({
             <label className="mb-1">Введите ваш номер телефона:</label>
             <InputMask
               value={phoneMaskValue}
+              type='tel'
               className="w-[60%]"
               onChange={(e) => {
                 setPhoneMaskValue(e.target.value);
