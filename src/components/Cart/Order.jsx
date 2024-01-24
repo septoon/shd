@@ -9,6 +9,7 @@ import { InputSwitch } from 'primereact/inputswitch';
 import { addLocale } from 'primereact/api';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
+import { RadioButton } from 'primereact/radiobutton';
 
 const Order = ({
   checked,
@@ -160,7 +161,7 @@ const Order = ({
                     showIcon
                     showTime
                     locale="ru"
-                    dateFormat="mm.dd.yy"
+                    dateFormat="dd.mm.yy"
                     hourFormat="24"
                   />
                 </div>
@@ -202,32 +203,14 @@ const Order = ({
             </div>
               {orderType === 'Доставка' && (
                 <div className="flex flex-col mb-6" name="checkbox">
-                  <label>Спооб оплаты:</label>
-                  <div className="payment_method">
-                    <input
-                      type="radio"
-                      onChange={changeValue}
-                      defaultValue="Наличные"
-                      name="cash"
-                      id="cash"
-                      checked={payValue === 'Наличные' ? true : false}
-                    />{' '}
-                    <label className="label_pay" htmlFor="cash">
-                      Наличные
-                    </label>
+                  <label className="mb-3">Спооб оплаты:</label>
+                  <div className="mb-2">
+                    <RadioButton inputId="cash" name="cash" value="Наличные" onChange={changeValue} checked={payValue === 'Наличные' ? true : false} />
+                    <label htmlFor="cash" className="ml-2">Наличные</label>
                   </div>
                   <div className="payment_method">
-                    <input
-                      type="radio"
-                      onChange={changeValue}
-                      defaultValue="Карта"
-                      name="cart"
-                      id="cart"
-                      checked={payValue === 'Карта' ? true : false}
-                    />{' '}
-                    <label className="label_pay" htmlFor="cart">
-                      Карта
-                    </label>
+                    <RadioButton inputId="cart" name="cart" value="Карта" onChange={changeValue} checked={payValue === 'Карта' ? true : false} />
+                    <label htmlFor="cart" className="ml-2">Карта</label>
                   </div>
                 </div>
               )}
