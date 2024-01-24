@@ -15,7 +15,7 @@ const Order = ({
   setChecked,
   datetime24h,
   setDateTime24h,
-  setIsOrder,
+  setVisible,
   items,
   countById,
   totalItems,
@@ -98,31 +98,16 @@ const Order = ({
     sendOrder(orderType, address, phoneNum, commentValue, dishesList.toString(), payValue);
     setTimeout(() => {
       setLoading(false);
-      setIsOrder(false);
+      setVisible(false);
     }, 2000);
   };
   return (
-    <div className="fixed top-0 left-0 right-0 bottom-0 bg-white z-50">
+    <div className="w-full h-full">
       <div className="h-full">
-        <div className="h-auto w-full pr-6 pt-3 flex justify-end">
-          <button onClick={() => setIsOrder(false)}>
-            <svg
-              className="h-8 w-8 text-dark"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-          </button>
-        </div>
-        <div className="w-full flex justify-center">
+        <div className="w-full flex justify-center mb-3">
           <div className="bg-light-gray rounded-md">
             <button
-              className={`text-white w-24 py-1 rounded-md transition-all ${
+              className={`text-white w-28 py-1 rounded-md transition-all ${
                 orderType === 'Доставка' ? 'bg-lightSlate-gray' : 'bg-light-gray'
               }`}
               onClick={() => {
@@ -131,7 +116,7 @@ const Order = ({
               Доставка
             </button>
             <button
-              className={`text-white w-24 py-1 rounded-md transition-all ${
+              className={`text-white w-28 py-1 rounded-md transition-all ${
                 orderType === 'Самовывоз' ? 'bg-lightSlate-gray' : 'bg-light-gray'
               }`}
               onClick={() => {
@@ -141,8 +126,7 @@ const Order = ({
             </button>
           </div>
         </div>
-        <h1 className="pl-3 text-xl font-bold mb-4">Ваш заказ:</h1>
-        <div className="px-2 flex flex-col h-full overflow-y-scroll">
+        <div className=" flex flex-col h-full overflow-y-scroll">
           <div className="max-h-32 overflow-y-auto flex flex-col mb-6 border-dashed border p-2 rounded-lg">
             {items.map((i) => {
               const count = countById(totalItems, i.id, i.activeSize);
@@ -159,7 +143,7 @@ const Order = ({
             </span>
 
             <div className="flex-auto w-auto">
-              <div className="w-full flex justify-between pr-6">
+              <div className="w-full flex justify-between">
                 <label htmlFor="calendar-24h" className="font-bold block mb-2">
                   {`Выбрать время ${orderType === 'Доставка' ? 'доставки' : 'самовывоза'}`}
                 </label>
@@ -186,7 +170,7 @@ const Order = ({
                 <label className="mb-1">Введите ваш адрес:</label>
                 <InputText
                   value={address}
-                  className="w-1/2"
+                  className="w-[60%]"
                   onChange={handleAddressChange}
                   placeholder="ул. Ленина, 13"
                 />
@@ -195,7 +179,7 @@ const Order = ({
             <label className="mb-1">Введите ваш номер телефона:</label>
             <InputMask
               value={phoneMaskValue}
-              className="w-1/2"
+              className="w-[60%]"
               onChange={(e) => {
                 setPhoneMaskValue(e.target.value);
                 handlePhoneNumChange(e);
@@ -204,18 +188,17 @@ const Order = ({
               placeholder="+7(978)879-62-20"
             />
 
-            <div className="w-full flex flex-col">
+            <div className="w-full flex flex-col mb-6">
               <label className="mb-1">Введите комментарий:</label>
               <InputText
                 value={commentValue}
-                className="w-1/2"
+                className="w-[60%]"
                 onChange={handleCommentChange}
                 placeholder="Например: без лука"
               />
             </div>
-            <div className='flex justify-between items-center mt-12'>
               {orderType === 'Доставка' && (
-                <div className="flex flex-col" name="checkbox">
+                <div className="flex flex-col mb-6" name="checkbox">
                   <label>Спооб оплаты:</label>
                   <div className="payment_method">
                     <input
@@ -245,19 +228,16 @@ const Order = ({
                   </div>
                 </div>
               )}
-              <div className='w-[40%]'>
-
-              <Button
+            
+            <Button
                 label="Заказать"
                 disabled={orderType === 'Доставка' ? !phoneMaskValue || !address : !phoneMaskValue}
                 icon="pi pi-check"
                 loading={loading}
                 onClick={load}
                 iconPos="right"
-                className=" w-auto h-auto px-4 py-2 f"
+                className=" w-auto h-auto px-4 py-2"
               />
-              </div>
-            </div>
           </div>
         </div>
       </div>

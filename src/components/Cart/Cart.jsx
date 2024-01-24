@@ -9,6 +9,7 @@ import CartIcon from '../../assets/img/cart-logo.svg'
 import axios from 'axios';
 import Order from './Order';
 import { Button } from 'primereact/button';
+import { Dialog } from 'primereact/dialog';
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -44,6 +45,12 @@ const Cart = () => {
 
   const [isOrder, setIsOrder] = useState (false);
 
+  const [visible, setVisible] = useState(false);
+  const [position, setPosition] = useState('center');
+  const show = (position) => {
+    setPosition(position);
+    setVisible(true);
+};
   const onClickRemoveDish = (dishObj) => {
     dispatch(removeDishAC(dishObj));
   };
@@ -112,6 +119,24 @@ const Cart = () => {
   return (
     <div className="pt-6 w-full">
       <h1 className="pl-6 text-title font-bold font-comfortaa">Корзина</h1>
+      <Dialog header="Ваш заказ" visible={visible} position={position} style={{ width: '100vw' }} onHide={() => setVisible(false)} draggable={false} resizable={false}>
+        <Order
+            checked={checked}
+            setChecked={setChecked}
+            datetime24h={datetime24h}
+            setDateTime24h={setDateTime24h}
+            setVisible={setVisible}
+            onClickClearCart={onClickClearCart}
+            countById={countById}
+            totalItems={items}
+            items={uniqueProducts}
+            totalCount={totalCount}
+            totalPrice={totalPrice}
+            sendOrder={sendOrder}
+            orderType={orderType}
+            setOrderType={setOrderType}
+          />
+      </Dialog>
       {isOrder && (
         <Order
           checked={checked}
@@ -172,7 +197,7 @@ const Cart = () => {
               </div>
               <div className="">
                 <div className="">
-                <Button className='px-4 py-2 bg-lightSlate-gray rounded-md fixed bottom-main-btn left-6 lg:left-[20%]' onClick={() => setIsOrder(true)} label='Оформить заказ' />
+                <Button className='px-4 py-2 bg-lightSlate-gray rounded-md fixed bottom-main-btn left-6 lg:left-[20%]' onClick={() => show('bottom')} label='Оформить заказ' />
                 </div>
               </div>
             </div>
