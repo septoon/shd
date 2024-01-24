@@ -8,6 +8,7 @@ import CartIcon from '../../assets/img/cart-logo.svg'
 
 import axios from 'axios';
 import Order from './Order';
+import { Button } from 'primereact/button';
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -171,9 +172,7 @@ const Cart = () => {
               </div>
               <div className="">
                 <div className="">
-                  <button className="w-auto bg-lightSlate-gray text-white px-4 py-2 rounded-md fixed bottom-main-btn left-6 lg:left-[20%]" onClick={() => setIsOrder(true)}>
-                    Оформить заказ
-                  </button>
+                <Button className='px-4 py-2 bg-lightSlate-gray rounded-md fixed bottom-main-btn left-6 lg:left-[20%]' onClick={() => setIsOrder(true)} label='Оформить заказ' />
                 </div>
               </div>
             </div>
@@ -188,7 +187,7 @@ const Cart = () => {
               страницу меню.
             </span>
             <NavLink to="/menu" className="">
-              <button className="w-auto bg-lightSlate-gray text-white px-4 py-2 rounded-md fixed bottom-main-btn left-6">Вернуться назад</button>
+              <Button className='px-4 py-2 bg-lightSlate-gray rounded-md fixed bottom-main-btn left-6 lg:left-[20%]' label='Вернуться назад' />
             </NavLink>
           </div>
         )}
