@@ -142,7 +142,7 @@ const Cart = () => {
   return (
     <div className="pt-6 w-full">
       <h1 className="pl-6 text-title font-bold font-comfortaa">Корзина</h1>
-      <Dialog header="Ваш заказ" visible={visible} position={position} style={{ width: '100vw' }} onHide={() => setVisible(false)} draggable={false} resizable={false}>
+      <Dialog header="Ваш заказ" visible={visible} position={position} className='w-screen lg:w-[40vw]' onHide={() => setVisible(false)} draggable={false} resizable={false}>
         <Order
             checked={checked}
             setChecked={setChecked}
@@ -161,7 +161,7 @@ const Cart = () => {
             setOrderType={setOrderType}
           />
       </Dialog>
-      <Dialog header="Спасибо за заказ" visible={isOrderFinish} position={position} style={{ width: '100vw' }} footer={footerContent}  onHide={() => setIsOrderFinish(false)}  draggable={false} resizable={false}>
+      <Dialog header="Спасибо за заказ" visible={isOrderFinish} position={position} className='w-screen lg:w-[40vw]' footer={footerContent}  onHide={() => setIsOrderFinish(false)}  draggable={false} resizable={false}>
         <OrderFinish orderValues={orderValues} shortDate={shortDate} shortTime={shortTime} />
       </Dialog>
       <div className="">
