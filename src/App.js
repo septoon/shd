@@ -49,7 +49,7 @@ function App() {
         <Navbar toggleMenu={toggleMenu} isOpen={isOpen} />
           <MenuBtn toggleMenuItems={toggleMenuItems} showNav={showNav} />
 
-          <Dialog header="Меню" visible={navVisible} position={position} style={{ width: '90vw' }} onHide={() => setNavVisible(false)} draggable={false} resizable={false}>
+          <Dialog header="Меню" visible={navVisible} position={position} style={{ width: '90vw', height: '70vh' }} onHide={() => setNavVisible(false)} draggable={false} resizable={false}>
             <MenuNav setItem={setItem} setNavVisible={setNavVisible} getCatalogName={getCatalogName} toggleMenuItems={toggleMenuItems} data={data} />
           </Dialog>
 
