@@ -246,7 +246,7 @@ export const data = {
   ],
   "Порционный шашлык": [
     {
-      image: "",
+      image: "https://i.ibb.co/cXjygX7/6516391e2be1b-1200x1200-fit-85-fff-jpg.jpg",
       name: "Люля из индейки",
       serving: "200 г",
       price: 370,
@@ -254,7 +254,7 @@ export const data = {
       id: 50
     },
     {
-      image: "",
+      image: "https://i.ibb.co/LSRwHZ2/shashlik-is-svinini-6538345e1c08d.jpg",
       name: "Шашлык из свинины",
       serving: "200 г",
       price: 350,
@@ -280,7 +280,7 @@ export const data = {
   ],
   "Блюда на мангале": [
     {
-      image: "",
+      image: "https://i.ibb.co/bP18RNX/IMAGE-2024-01-19-16-23-55.jpg",
       name: "Овощной шашлык",
       options: "Цена за 100г",
       serving: 100,
