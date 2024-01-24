@@ -39,13 +39,10 @@ const MenuItem = ({
           <span className="name">{name}</span>
         </div>
         <div className="columns">
-          <span className='text-metal'>{serving ? serving : ``}</span>
+          {options ? (<span  className='font-comfortaa text-sm'>{options}</span>) : (<span className='text-metal'>{serving ? serving : ``}</span>)}
         </div>
         <div className='w-full flex flex-row justify-between items-center pr-2'>
-          <div className='flex flex-col'>
-            {options ? (<span  className='font-comfortaa text-sm'>{options}</span>) : ``}
-            <span className='font-bold text-lightSlate-gray'>{price} ₽</span>
-          </div>
+          <span className='font-bold text-lightSlate-gray'>{price} ₽</span>
           <Button className='py-1 px-2 z-0' label="В корзину" onClick={onAddDishes}></Button>
         </div>
       </div>
