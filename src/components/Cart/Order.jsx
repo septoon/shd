@@ -142,7 +142,7 @@ const Order = ({
           </div>
         </div>
         <h1 className="pl-3 text-xl font-bold mb-4">Ваш заказ:</h1>
-        <div className="px-2 flex flex-col h-full overflow-y-auto">
+        <div className="px-2 flex flex-col h-full overflow-y-scroll">
           <div className="max-h-32 overflow-y-auto flex flex-col mb-6 border-dashed border p-2 rounded-lg">
             {items.map((i) => {
               const count = countById(totalItems, i.id, i.activeSize);
