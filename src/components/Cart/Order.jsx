@@ -13,6 +13,7 @@ import { Button } from 'primereact/button';
 const Order = ({
   checked,
   setChecked,
+  setIsOrderFinish,
   datetime24h,
   setDateTime24h,
   setVisible,
@@ -99,12 +100,13 @@ const Order = ({
     setTimeout(() => {
       setLoading(false);
       setVisible(false);
+      setIsOrderFinish(true)
     }, 2000);
   };
   return (
     <div className="w-full h-full">
       <div className="h-full">
-        <div className="w-full flex justify-center mb-3">
+        <div className="w-full flex justify-center my-3">
           <div className="bg-light-gray rounded-md">
             <button
               className={`text-white w-28 py-1 rounded-md transition-all ${

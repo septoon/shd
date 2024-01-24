@@ -10,6 +10,7 @@ import axios from 'axios';
 import Order from './Order';
 import { Button } from 'primereact/button';
 import { Dialog } from 'primereact/dialog';
+import OrderFinish from './OrderFinish';
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -43,14 +44,26 @@ const Cart = () => {
     }, 0);
   };
 
-  const [isOrder, setIsOrder] = useState (false);
+  const [isOrderFinish, setIsOrderFinish] = useState(false);
 
   const [visible, setVisible] = useState(false);
   const [position, setPosition] = useState('center');
   const show = (position) => {
     setPosition(position);
     setVisible(true);
-};
+  };
+
+  const showCheck = (position) => {
+    setPosition(position);
+    setIsOrderFinish(true);
+  };
+
+  const footerContent = (
+    <div>
+        <Button label="Ok" className='py-2 px-4' icon="pi pi-check" onClick={() => setIsOrderFinish(false)} autoFocus />
+    </div>
+);
+
   const onClickRemoveDish = (dishObj) => {
     dispatch(removeDishAC(dishObj));
   };
@@ -74,6 +87,8 @@ const Cart = () => {
 
   const [orderType, setOrderType] = useState('Доставка');
   const ordersCount = Math.floor(Math.random() * 99999999);
+
+  const [orderValues, setOrderValues] = useState({})
 
   const sendOrder = async (orderType, address, phoneNumber, comment, dishes, pay) => {
     let message = orderType === 'Доставка' ? `
@@ -102,6 +117,15 @@ const Cart = () => {
     Дата доставки: Сегодня
     Время доставки: Сейчас`}
           `
+    setOrderValues({
+      orderType,
+      address, 
+      phoneNumber, 
+      comment, 
+      dishes,
+      totalPrice,
+      pay
+    })
     await axios.post(
         'https://api.telegram.org/bot6449386041:AAGzqG0r-R9AJFcY0EeV0vv6XBjFNDx_7xE/sendMessage',
         {
@@ -123,6 +147,7 @@ const Cart = () => {
         <Order
             checked={checked}
             setChecked={setChecked}
+            setIsOrderFinish={setIsOrderFinish}
             datetime24h={datetime24h}
             setDateTime24h={setDateTime24h}
             setVisible={setVisible}
@@ -137,24 +162,9 @@ const Cart = () => {
             setOrderType={setOrderType}
           />
       </Dialog>
-      {isOrder && (
-        <Order
-          checked={checked}
-          setChecked={setChecked}
-          datetime24h={datetime24h}
-          setDateTime24h={setDateTime24h}
-          setIsOrder={setIsOrder}
-          onClickClearCart={onClickClearCart}
-          countById={countById}
-          totalItems={items}
-          items={uniqueProducts}
-          totalCount={totalCount}
-          totalPrice={totalPrice}
-          sendOrder={sendOrder}
-          orderType={orderType}
-          setOrderType={setOrderType}
-        />
-      )}
+      <Dialog header="Спасибо за заказ" visible={isOrderFinish} position={position} style={{ width: '100vw' }} footer={footerContent}  onHide={() => setIsOrderFinish(false)}  draggable={false} resizable={false}>
+        <OrderFinish orderValues={orderValues} shortDate={shortDate} shortTime={shortTime} />
+      </Dialog>
       <div className="">
         {items.length ? (
           // Если в корзине что-то есть
