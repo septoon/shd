@@ -12,6 +12,7 @@ import Delivery from "./components/Delivery/Delivery.jsx";
 import Main from "./components/Main/Main.jsx";
 import MenuCards from "./components/Menu/MenuCards.jsx";
 import { Dialog } from "primereact/dialog";
+import { Sidebar } from "primereact/sidebar";
 
 function App() {
   const firstKey = Object.keys(data)[0];
@@ -46,7 +47,9 @@ function App() {
     <div className='bg-shd w-full flex justify-center bg-cover bg-center bg-fixed min-h-screen'>
       <div className="w-full max-w-[900px] flex flex-col items-center relative pt-20">
         <Header toggleMenu={toggleMenu} setIsOpen={setIsOpen} isOpen={isOpen} />
-        <Navbar toggleMenu={toggleMenu} isOpen={isOpen} />
+        <Sidebar visible={isOpen} position="right" onHide={() => setIsOpen(false)}>
+          <Navbar toggleMenu={toggleMenu} isOpen={isOpen} />    
+        </Sidebar>
           <MenuBtn toggleMenuItems={toggleMenuItems} showNav={showNav} />
 
           <Dialog header="Меню" visible={navVisible} position={position} className="w-[90vw] h-[70vh] lg:w-[40vw]" onHide={() => setNavVisible(false)} draggable={false} resizable={false}>
