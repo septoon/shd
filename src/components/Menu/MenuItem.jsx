@@ -1,5 +1,6 @@
 import React from 'react';
 import pic from '../../assets/img/pic1.jpg';
+import { Button } from 'primereact/button';
 
 const MenuItem = ({
   id,
@@ -45,7 +46,7 @@ const MenuItem = ({
             {options ? (<span  className='font-comfortaa text-sm'>{options}</span>) : ``}
             <span className='font-bold text-lightSlate-gray'>{price} ₽</span>
           </div>
-          <button className=' mt-0 w-auto h-auto  bg-lightSlate-gray active:bg-light-gray focus:outline-none  text-white rounded-md py-1 px-2 ' onClick={onAddDishes}>В корзину</button>
+          <Button className='py-1 px-2 z-0' label="В корзину" onClick={onAddDishes}></Button>
         </div>
       </div>
     </div>

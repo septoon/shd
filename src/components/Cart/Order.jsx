@@ -3,11 +3,12 @@ import React, { useState } from 'react';
 import { InputMask } from 'primereact/inputmask';
 import { Calendar } from 'primereact/calendar';
 
-import "primereact/resources/themes/lara-light-indigo/theme.css";
-import "primereact/resources/primereact.min.css";
+import "primereact/resources/themes/lara-light-cyan/theme.css";
 import "primeicons/primeicons.css";
 import { InputSwitch } from 'primereact/inputswitch';
 import { addLocale } from 'primereact/api';
+import { InputText } from 'primereact/inputtext';
+import { Button } from 'primereact/button';
 
 const Order = ({
   checked,
@@ -64,6 +65,24 @@ const Order = ({
     today: 'Сегодня',
     clear: 'Отменить'
 });
+
+const [loading, setLoading] = useState(false);
+
+    const load = () => {
+        setLoading(true);
+        sendOrder(
+          orderType,
+          address,
+          phoneNum,
+          commentValue,
+          dishesList.toString(),
+          payValue,
+        );
+        setTimeout(() => {
+            setLoading(false);
+            setIsOrder(false);
+        }, 2000);
+    };
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0  bg-white z-50">
       <div className="h-full">
@@ -140,31 +159,22 @@ const Order = ({
             {orderType === 'Доставка' && (
               <div className="flex flex-col">
                 <label className='mb-1'>Введите ваш адрес:</label>
-                <input
-                  required
-                  className="mb-3 w-1/2 h-auto p-2 rounded-lg border-2 border-lightSlate-gray"
+                <InputText value={address} className='w-1/2' 
                   onChange={handleAddressChange}
-                  name="address"
-                  placeholder="ул. Ленина, 13"
-                />
+                  placeholder="ул. Ленина, 13"/>
               </div>
             )}
             <label className='mb-1'>Введите ваш номер телефона:</label>
-            <div className="mb-3 w-1/2 h-auto p-2 rounded-lg border-2 border-lightSlate-gray">
-              <InputMask value={phoneMaskValue} onChange={(e) => {
+              <InputMask value={phoneMaskValue} className='w-1/2' onChange={(e) => {
                 setPhoneMaskValue(e.target.value)
                 handlePhoneNumChange(e)
               }} mask="+7(999)999-99-99" placeholder="+7(978)879-62-20"/>
-            </div>
+            
             <div className="w-full flex flex-col">
               <label className='mb-1'>Введите комментарий:</label>
-              <input
-                className="mb-3 w-1/2 h-auto p-2 rounded-lg border-2 border-lightSlate-gray"
-                name="comment"
-                onChange={handleCommentChange}
-                type="text"
-                placeholder="Например: без лука"
-              />
+              <InputText value={commentValue} className='w-1/2' 
+                  onChange={handleCommentChange}
+                  placeholder="Например: без лука"/>
             </div>
             {orderType === 'Доставка' && (
               <div className="flex flex-col fixed bottom-[12dvh]" name="checkbox">
@@ -198,25 +208,11 @@ const Order = ({
               </div>
             )}
           </div>
-          <button
-            type="submit"
-            disabled={!address}
-            className="w-auto bg-lightSlate-gray text-white px-4 py-2 rounded-md fixed bottom-main-btn left-6"
-            onClick={() => {
-              sendOrder(
-                orderType,
-                address,
-                phoneNum,
-                commentValue,
-                dishesList.toString(),
-                payValue,
-              );
-              setTimeout(() => {
-                setIsOrder(false);
-              }, 2000);
-            }}>
-            Отправить
-          </button>
+          <Button label="Отправить" 
+            disabled={orderType === 'Доставка' ? !phoneMaskValue || !address : !phoneMaskValue} 
+            icon="pi pi-check" 
+            loading={loading}
+            onClick={load} iconPos="right" className=' w-[40%] px-4 py-2 fixed bottom-main-btn left-6'/>
         </div>
       </div>
     </div>
