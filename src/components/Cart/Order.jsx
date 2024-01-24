@@ -1,9 +1,19 @@
 import React, { useState } from 'react';
 
 import { InputMask } from 'primereact/inputmask';
-        
+import { Calendar } from 'primereact/calendar';
+
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
+import { InputSwitch } from 'primereact/inputswitch';
+import { addLocale } from 'primereact/api';
 
 const Order = ({
+  checked,
+  setChecked,
+  datetime24h,
+  setDateTime24h,
   setIsOrder,
   items,
   countById,
@@ -43,6 +53,17 @@ const Order = ({
     const value = `${i.name} | ${i.serving ? i.serving + ' |' : ''} | ${i.price} ₽ | x ${count}шт.`;
     return value;
   });
+
+  addLocale('ru', {
+    firstDayOfWeek: 1,
+    dayNames: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
+    dayNamesShort: ["Вск", "Пнд", "Втр", "Срд", "Чтв", "Птн", "Сбт"],
+    dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+    monthNames: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+    monthNamesShort: ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"],
+    today: 'Сегодня',
+    clear: 'Отменить'
+});
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0  bg-white z-50">
       <div className="h-full">
@@ -99,6 +120,23 @@ const Order = ({
             <span className='mb-6'>
               На сумму: <b className="text-lightSlate-gray">{totalPrice}</b> ₽
             </span>
+
+            <div className="flex-auto w-auto">
+              <div className='w-full flex justify-between pr-6'>
+                <label htmlFor="calendar-24h" className="font-bold block mb-2">
+                    {`Выбрать время ${orderType === 'Доставка' ? "доставки" : "самовывоза"}`}
+                </label>
+                <InputSwitch checked={checked} onChange={(e) => setChecked(e.value)} />
+              </div>
+              {
+                checked && (
+                  <div className='w-auto h-auto bg-white'>
+                    <Calendar id="calendar-24h" value={datetime24h} onChange={(e) => setDateTime24h(e.value)} showIcon showTime locale='ru' dateFormat="mm.dd.yy" hourFormat="24" />
+                  </div>
+                )
+              }
+            </div>
+
             {orderType === 'Доставка' && (
               <div className="flex flex-col">
                 <label className='mb-1'>Введите ваш адрес:</label>

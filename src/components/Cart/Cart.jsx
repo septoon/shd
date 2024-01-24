@@ -49,20 +49,51 @@ const Cart = () => {
   const onClickClearCart = () => {
     dispatch(clearDishCartAC());
   };
+
+  const [datetime24h, setDateTime24h] = useState(new Date());
+  const shortDate = datetime24h.toLocaleDateString('ru-RU', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  });
+  const shortTime = datetime24h.toLocaleTimeString('ru-RU', {
+    hour12: false,
+    hour: 'numeric',
+    minute: 'numeric',
+  });
+
+  const [checked, setChecked] = useState(false);
+
   const [orderType, setOrderType] = useState('Доставка');
   const ordersCount = Math.floor(Math.random() * 99999999);
 
-  const sendOrder = async (orderType, address, phoneNumber, comment, pizzas, pay) => {
-    let message = `
+  const sendOrder = async (orderType, address, phoneNumber, comment, dishes, pay) => {
+    let message = orderType === 'Доставка' ? `
     Заказ # ${ordersCount}
     ${orderType}
-    ${pizzas.toString()}
+    ${dishes.toString()}
     Сумма: ${totalPrice}
     Адрес Доставки: ${address}
     Номер телефона: ${phoneNumber}
+            ${checked ? `
+    Дата доставки: ${shortDate}
+    Время доставки: ${shortTime}` : `
+    Дата доставки: Сегодня
+    Время доставки: Сейчас`}
     Комментарий: ${comment}
     Способ оплаты: ${pay}
-          `;
+          ` :
+    `Заказ # ${ordersCount}
+    ${orderType}
+    ${dishes.toString()}
+    Сумма: ${totalPrice}
+    Номер телефона: ${phoneNumber}
+            ${checked ? `
+    Дата доставки: ${shortDate}
+    Время доставки: ${shortTime}` : `
+    Дата доставки: Сегодня
+    Время доставки: Сейчас`}
+          `
     await axios.post(
         'https://api.telegram.org/bot6449386041:AAGzqG0r-R9AJFcY0EeV0vv6XBjFNDx_7xE/sendMessage',
         {
@@ -82,6 +113,10 @@ const Cart = () => {
       <h1 className="pl-6 text-title font-bold font-comfortaa">Корзина</h1>
       {isOrder && (
         <Order
+          checked={checked}
+          setChecked={setChecked}
+          datetime24h={datetime24h}
+          setDateTime24h={setDateTime24h}
           setIsOrder={setIsOrder}
           onClickClearCart={onClickClearCart}
           countById={countById}
