@@ -74,7 +74,6 @@ const Cart = () => {
   
   const onClickPlusDish = (dishObj) => {
     dispatch(incrementDish(dishObj))
-    console.log(items)
   }
 
   const [datetime24h, setDateTime24h] = useState(new Date());

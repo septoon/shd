@@ -45,6 +45,7 @@ const cartSlice = createSlice({
       if (existingItem) {
         
         state.items.pop();
+        existingItem.quantity -= 1;
         state.totalCount -= 1;
         state.totalPrice -= parseInt(existingItem.price);
       }
