@@ -47,7 +47,7 @@ const CartItem = ({
         <span className='text-[10px] '>{name}</span>
         <span className='text-xs opacity-40'>{serving}</span>
       </div>
-      <button className={isMinusSpin ? "animate-spin w-4" : "w-4"} onClick={onMinusDish}>-</button>
+      <button className="w-4" onClick={onMinusDish}>-</button>
       <div className="">
         {
           options ? (
@@ -57,7 +57,7 @@ const CartItem = ({
           )
         }
       </div>
-      <button className={isPlusSpin ? "animate-spin w-4" : "w-4"} onClick={onPlusDish}>+</button>
+      <button className="w-4" onClick={onPlusDish}>+</button>
       <div className="">
         <b>{price * countById}₽</b>
       </div>
