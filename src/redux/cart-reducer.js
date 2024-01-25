@@ -1,58 +1,63 @@
-const ADD_DISH_CART = 'cart/ADD_DISH_CART'
-const CLEAR_DISH_CART = 'cart/CLEAR_DISH_CART'
-const MINUS_DISH = 'cart/MINUS_DISH'
+import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-  items: [],
-  totalCount: 0,
-  totalPrice: 0
-}
+const cartSlice = createSlice({
+  name: 'cart',
+  initialState: {
+    items: [],
+    totalCount: 0,
+    totalPrice: 0,
+  },
+  reducers: {
+    addDishToCart: (state, action) => {
+      state.items.push({ ...action.payload, quantity: 1 });
+      state.totalCount += 1;
+      state.totalPrice += parseInt(action.payload.price);
+    },
+    clearDishCart: (state) => {
+      state.items = [];
+      state.totalCount = 0;
+      state.totalPrice = 0;
+    },
+    removeDish: (state, action) => {
+      const { dishId } = action.payload;
+      const removedItem = state.items.find((item) => item.id === dishId);
 
-const cartReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case ADD_DISH_CART: {
-      let newState =  {
-        ...state, 
-        items: [...state.items, action.payload],
+      if (removedItem) {
+        state.totalCount -= removedItem.quantity;
+        state.totalPrice -= parseInt(removedItem.price) * removedItem.quantity;
+        state.items = state.items.filter((item) => item.id !== dishId);
       }
+    },
+    incrementDish: (state, action) => {
+      const { dishId } = action.payload;
+      const existingItem = state.items.find((item) => item.id === dishId);
 
-      let newTotalPrice = 0
-
-      newState.items.forEach(item => newTotalPrice += parseInt(item.price) )
-      
-      newState.totalCount = newState.items.length
-
-      newState.totalPrice = newTotalPrice
-
-      return newState
-    }
-    case CLEAR_DISH_CART: {
-      let newState = { 
-        ...state, items: state.items = []
+      if (existingItem) {
+        state.items.push({ ...existingItem, quantity: 1 });
+        state.totalCount += 1;
+        state.totalPrice += parseInt(existingItem.price);
       }
-      newState.totalCount = 0
-
-      newState.totalPrice = 0
-      return newState
-    }
-    case MINUS_DISH: {
-      const { dishId, dishSize } = action.payload;
-      const updatedItems = state.items.filter(item => item.id !== dishId || item.activeSize !== dishSize);
-      const newTotalPrice = updatedItems.reduce((sum, item) => sum + parseInt(item.price), 0);
-      return {
-        ...state,
-        items: updatedItems,
-        totalCount: updatedItems.length,
-        totalPrice: newTotalPrice
+    },
+    decrementDish: (state, action) => {
+      const { dishId } = action.payload;
+      const existingItem = state.items.find((item) => item.id === dishId);
+    
+      if (existingItem) {
+        
+        state.items.pop();
+        state.totalCount -= 1;
+        state.totalPrice -= parseInt(existingItem.price);
       }
-    }
-    default:
-      return state
-  }
-}
+    },
+  },
+});
 
-export const addDishToCartAC = (dishObj) => ({ type: ADD_DISH_CART, payload: dishObj  })
-export const clearDishCartAC = () => ({ type: CLEAR_DISH_CART })
-export const removeDishAC = (dishObj) => ({ type: MINUS_DISH, payload: dishObj  })
+export const {
+  addDishToCart,
+  clearDishCart,
+  removeDish,
+  incrementDish,
+  decrementDish,
+} = cartSlice.actions;
 
-export default cartReducer
+export default cartSlice.reducer;

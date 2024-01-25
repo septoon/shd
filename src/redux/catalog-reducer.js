@@ -1,23 +1,21 @@
-const ADD_CATALOG_LIST = 'catalog/ADD_CATALOG_LIST'
-const TOGGLE_IS_ACTIVE = 'catalog/TOGGLE_IS_ACTIVE'
+import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-  catalogData: [],
-  isActive: false
-}
+const catalogSlice = createSlice({
+  name: 'catalog',
+  initialState: {
+    catalogData: [],
+    isActive: false,
+  },
+  reducers: {
+    addCatalogList: (state, action) => {
+      state.catalogData = action.payload;
+    },
+    toggleIsActive: (state, action) => {
+      state.isActive = action.payload;
+    },
+  },
+});
 
-const catalogReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case ADD_CATALOG_LIST:
-      return {...state,  catalogData: action.list }
-    case TOGGLE_IS_ACTIVE:
-      return {...state,  isActive: action.isActive }
-    default:
-      return state
-  }
-}
+export const { addCatalogList, toggleIsActive } = catalogSlice.actions;
 
-export const addCatalogList = (list) => ({ type: ADD_CATALOG_LIST, list })
-export const toggleIsActive = (isActive) => ({ type: TOGGLE_IS_ACTIVE, isActive })
-
-export default catalogReducer
+export default catalogSlice.reducer;

@@ -10,8 +10,24 @@ const CartItem = ({
   price,
   options,
   countById,
+  onClickMinusDish,
+  onClickPlusDish,
   onClickRemoveDish,
 }) => {
+  
+  const onMinusDish = () => {
+    const dishObj = {
+      dishId: id
+    };
+    onClickMinusDish(dishObj);
+  };
+  
+  const onPlusDish = () => {
+    const dishObj = {
+      dishId: id
+    };
+    onClickPlusDish(dishObj);
+  };
   
   const onRemoveDish = () => {
     const dishObj = {
@@ -29,6 +45,7 @@ const CartItem = ({
         <span className='text-[10px] '>{name}</span>
         <span className='text-xs opacity-40'>{serving}</span>
       </div>
+      <button onClick={onMinusDish}>-</button>
       <div className="">
         {
           options ? (
@@ -37,8 +54,8 @@ const CartItem = ({
             <span>{countById}шт.</span>
           )
         }
-        
       </div>
+      <button onClick={onPlusDish}>+</button>
       <div className="">
         <b>{price * countById}₽</b>
       </div>

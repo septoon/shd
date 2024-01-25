@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { clearDishCartAC, removeDishAC } from '../../redux/cart-reducer';
+import { clearDishCart, removeDish, decrementDish, incrementDish } from '../../redux/cart-reducer';
 import CartItem from './CartItem';
 import Trash from '../../assets/img/trash.svg'
 import CartIcon from '../../assets/img/cart-logo.svg'
@@ -61,11 +61,21 @@ const Cart = () => {
 );
 
   const onClickRemoveDish = (dishObj) => {
-    dispatch(removeDishAC(dishObj));
+    dispatch(removeDish(dishObj));
   };
   const onClickClearCart = () => {
-    dispatch(clearDishCartAC());
+    dispatch(clearDishCart());
   };
+
+  const onClickMinusDish = (dishObj) => {
+    dispatch(decrementDish(dishObj))
+    console.log(items)
+  }
+  
+  const onClickPlusDish = (dishObj) => {
+    dispatch(incrementDish(dishObj))
+    console.log(items)
+  }
 
   const [datetime24h, setDateTime24h] = useState(new Date());
   const shortDate = datetime24h.toLocaleDateString('ru-RU', {
@@ -173,21 +183,23 @@ const Cart = () => {
                 className="flex mt-2 mb-4"
                 onClick={() => {
                   let popup = window.confirm('Вы уверены, что хотите очистить корзину?');
-                  popup && dispatch(clearDishCartAC());
+                  popup && dispatch(clearDishCart());
                 }}>
                 <img className='text-lightSlate-gray' src={Trash} alt="trash" />
                 <span>Очистить корзину</span>
               </div>
             </div>
-            <div className="px-2 max-h-half-screen overflow-y-auto">
+            <div className="px-2 max-h-[40dvh] overflow-y-auto">
               {uniqueProducts.map((item, index) => {
                 const count = countById(items, item.id, item.activeSize);
-
+                
                 return (
                   <CartItem
                     key={index}
                     countById={count}
-                    onClickRemoveDish={onClickRemoveDish}
+                    onClickMinusDish={() => onClickMinusDish({ dishId: item.id })}
+                    onClickPlusDish={() => onClickPlusDish({ dishId: item.id })}
+                    onClickRemoveDish={() => onClickRemoveDish({ dishId: item.id })}
                     {...item}
                   />
                 );

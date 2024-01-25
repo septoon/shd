@@ -1,11 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import { store } from './redux/redux-store';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import { PrimeReactProvider } from 'primereact/api';
+import store from './redux/redux-store'; 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

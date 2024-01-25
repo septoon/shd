@@ -14,7 +14,6 @@ const MenuItem = ({
   toggleIsActive,
   isActive,
 }) => {
-
   const onAddDishes = () => {
     const obj = {
       id,
@@ -39,7 +38,7 @@ const MenuItem = ({
           <span className="name">{name}</span>
         </div>
         <div className="columns">
-          {options ? (<span  className='font-comfortaa text-sm'>{options}</span>) : (<span className='text-metal'>{serving ? serving : ``}</span>)}
+          {options ? (<span className='font-comfortaa text-sm'>{options}</span>) : (<span className='text-metal'>{serving ? serving : ``}</span>)}
         </div>
         <div className='w-full flex flex-row justify-between items-center pr-2'>
           <span className='font-bold text-lightSlate-gray'>{price} ₽</span>

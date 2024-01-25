@@ -5,7 +5,7 @@ import ClockIcon from '../../assets/img/clock.svg'
 
 const Contacts = () => {
   return (
-    <div className='pt-6 w-full flex flex-col'>
+    <div className='pt-6 w-full h-full flex flex-col'>
       <h1 className="pl-6 mb-6 text-title font-bold font-comfortaa">Контакты</h1>
 
       <div className='w-full flex flex-col pl-3'>
@@ -31,6 +31,14 @@ const Contacts = () => {
             <span>Режим работы</span>
             <span className='font-bold'>11:00 - 23:00</span>
           </div>
+        </div>
+
+        <div className='mt-[10vh]'>
+          <span className='font-comfortaa font-bold'>Мы в Яндексе</span>
+        <iframe src="https://yandex.ru/sprav/widget/rating-badge/242441059425?type=rating" 
+          className='w-[150] h-[50]' 
+          frameborder="0">  
+        </iframe> 
         </div>
       </div>
     </div>

@@ -1,14 +1,12 @@
-import { combineReducers, createStore } from 'redux'
+import { configureStore } from '@reduxjs/toolkit';
+import cartReducer from './cart-reducer';
+import catalogReducer from './catalog-reducer';
 
-import cartReducer from './cart-reducer'
-
-import catalogReducer from './catalog-reducer'
-
-const reducers = combineReducers({
-    catalogPage: catalogReducer,
+const store = configureStore({
+  reducer: {
     cart: cartReducer,
-})
+    catalogPage: catalogReducer,
+  },
+});
 
-export const store = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()) // applyMiddleware for thunk
-
-window.store = store
+export default store;
