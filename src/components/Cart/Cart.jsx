@@ -69,11 +69,11 @@ const Cart = () => {
 
   const onClickMinusDish = (dishObj) => {
     dispatch(decrementDish(dishObj))
-    console.log(items)
   }
   
   const onClickPlusDish = (dishObj) => {
     dispatch(incrementDish(dishObj))
+    console.log(items)
   }
 
   const [datetime24h, setDateTime24h] = useState(new Date());

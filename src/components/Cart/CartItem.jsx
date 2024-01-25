@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Trash from '../../assets/img/trash.svg'
 import pic from '../../assets/img/pic1.jpg'
+import MinusIcon from '../../assets/img/minus.png'
+import PlusIcon from '../../assets/img/plus.png'
 
 const CartItem = ({
   id,
@@ -41,11 +43,11 @@ const CartItem = ({
       <div className="cart__item-img">
         <img className="min-w-10 max-w-10 max-h-8 rounded-md" src={image ? image : pic} alt="картинка" />
       </div>
-      <div className="flex flex-col w-1/3">
+      <div className="flex flex-col w-[30%]">
         <span className='text-[10px] '>{name}</span>
         <span className='text-xs opacity-40'>{serving}</span>
       </div>
-      <button onClick={onMinusDish}>-</button>
+      <button className={isMinusSpin ? "animate-spin w-4" : "w-4"} onClick={onMinusDish}>-</button>
       <div className="">
         {
           options ? (
@@ -55,7 +57,7 @@ const CartItem = ({
           )
         }
       </div>
-      <button onClick={onPlusDish}>+</button>
+      <button className={isPlusSpin ? "animate-spin w-4" : "w-4"} onClick={onPlusDish}>+</button>
       <div className="">
         <b>{price * countById}₽</b>
       </div>

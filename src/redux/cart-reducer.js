@@ -40,16 +40,24 @@ const cartSlice = createSlice({
     },
     decrementDish: (state, action) => {
       const { dishId } = action.payload;
-      const existingItem = state.items.find((item) => item.id === dishId);
+      const existingItemIndex = state.items.findIndex((item) => item.id === dishId);
     
-      if (existingItem) {
+      if (existingItemIndex !== -1) {
+        const updatedItems = [...state.items];
+        const existingItem = updatedItems[existingItemIndex];
         
-        state.items.pop();
         existingItem.quantity -= 1;
         state.totalCount -= 1;
         state.totalPrice -= parseInt(existingItem.price);
+    
+        if (existingItem.quantity === 0) {
+          updatedItems.splice(existingItemIndex, 1);
+        }
+    
+        state.items = updatedItems;
       }
     },
+    
   },
 });
 

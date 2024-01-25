@@ -13,6 +13,7 @@ import Main from "./components/Main/Main.jsx";
 import MenuCards from "./components/Menu/MenuCards.jsx";
 import { Dialog } from "primereact/dialog";
 import { Sidebar } from "primereact/sidebar";
+import Vacancies from "./components/Vacancies/Vacancies.jsx";
 
 function App() {
   const firstKey = Object.keys(data)[0];
@@ -63,6 +64,7 @@ function App() {
             <Route path="/delivery" element={<Delivery />} />
             <Route path="/contacts" element={<Contacts />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/vacancies" element={<Vacancies />} />
           </Routes>
       </div>
     </div>

@@ -246,7 +246,7 @@ export const data = {
   ],
   "Порционный шашлык": [
     {
-      image: "https://i.ibb.co/cXjygX7/6516391e2be1b-1200x1200-fit-85-fff-jpg.jpg",
+      image: "https://i.ibb.co/YL5n8j7/IMG-4058.jpg",
       name: "Люля из индейки",
       serving: "200 г",
       price: 370,
@@ -254,7 +254,7 @@ export const data = {
       id: 50
     },
     {
-      image: "https://i.ibb.co/LSRwHZ2/shashlik-is-svinini-6538345e1c08d.jpg",
+      image: "https://i.ibb.co/PmZGmGQ/IMG-4050.jpg",
       name: "Шашлык из свинины",
       serving: "200 г",
       price: 350,
@@ -262,7 +262,7 @@ export const data = {
       id: 51
     },
     {
-      image: "",
+      image: "https://i.ibb.co/zHq5s54/IMG-4079.jpg",
       name: "Шашлык из индейки",
       serving: "200 г",
       price: 400,
@@ -270,7 +270,7 @@ export const data = {
       id: 52
     },
     {
-      image: "",
+      image: "https://i.ibb.co/NFWZH1S/IMG-4047.jpg",
       name: "Лангусты",
       serving: "4 шт.",
       price: 690,
@@ -289,7 +289,7 @@ export const data = {
       id: 60
     },
     {
-      image: "",
+      image: "https://i.ibb.co/qBnHz2C/IMG-4074.jpg",
       name: "Шампиньоны",
       options: "Цена за 100г",
       serving: 100,
@@ -298,7 +298,7 @@ export const data = {
       id: 61
     },
     {
-      image: "",
+      image: "https://i.ibb.co/JcnstBS/IMG-4012.jpg",
       name: "Стейк из свинины",
       options: "Цена за 100г",
       serving: 100,
@@ -307,7 +307,7 @@ export const data = {
       id: 62
     },
     {
-      image: "",
+      image: "https://i.ibb.co/2YczVyt/IMG-4052.jpg",
       name: "Ребра свиные",
       options: "Цена за 100г",
       serving: 100,
@@ -316,7 +316,7 @@ export const data = {
       id: 63
     },
     {
-      image: "",
+      image: "https://i.ibb.co/nrxJYkH/IMG-4006.jpg",
       name: "Каре ягненка",
       options: "Цена за 100г",
       serving: 100,
@@ -325,7 +325,7 @@ export const data = {
       id: 64
     },
     {
-      image: "",
+      image: "https://i.ibb.co/4Kmcv70/IMG-4091.jpg",
       name: "Стейк из телятины",
       options: "Цена за 100г",
       serving: 100,
@@ -334,7 +334,7 @@ export const data = {
       id: 65
     },
     {
-      image: "",
+      image: "https://i.ibb.co/1v1NSyD/IMG-4048.jpg",
       name: "Мякоть из телятины",
       options: "Цена за 100г",
       serving: 100,
@@ -343,7 +343,7 @@ export const data = {
       id: 66
     },
     {
-      image: "",
+      image: "https://i.ibb.co/FsRFpQW/IMG-4090.jpg",
       name: "Антрекот из телятины",
       options: "Цена за 100г",
       serving: 100,
@@ -352,7 +352,7 @@ export const data = {
       id: 67
     },
     {
-      image: "",
+      image: "https://i.ibb.co/KrkCNys/IMG-4082.jpg",
       name: "Стейк из индейки",
       options: "Цена за 100г",
       serving: 100,
@@ -361,7 +361,7 @@ export const data = {
       id: 68
     },
     {
-      image: "",
+      image: "https://i.ibb.co/0c8t3WQ/IMG-4098.jpg",
       name: "Ципленок на гриле",
       options: "Цена за 100г",
       serving: 100,
@@ -370,7 +370,7 @@ export const data = {
       id: 69
     },
     {
-      image: "",
+      image: "https://i.ibb.co/ZhLw21X/IMG-4097.jpg",
       name: "Перепелка",
       options: "Цена за 100г",
       serving: 100,
@@ -379,7 +379,7 @@ export const data = {
       id: 70
     },
     {
-      image: "",
+      image: "https://i.ibb.co/r34QNQM/IMG-4041.jpg",
       name: "Речная форель",
       options: "Цена за 100г",
       serving: 100,
@@ -388,7 +388,7 @@ export const data = {
       id: 71
     },
     {
-      image: "",
+      image: "https://i.ibb.co/HpZ1g6n/IMG-4040.jpg",
       name: "Форель стейк",
       options: "Цена за 100г",
       serving: 100,
@@ -397,7 +397,7 @@ export const data = {
       id: 72
     },
     {
-      image: "",
+      image: "https://i.ibb.co/9Hc1zJW/IMG-4102.jpg",
       name: "Семга стейк",
       options: "Цена за 100г",
       serving: 100,
@@ -406,7 +406,7 @@ export const data = {
       id: 73
     },
     {
-      image: "",
+      image: "https://i.ibb.co/FmqcGbn/IMG-4093.jpg",
       name: "Скумбрия",
       options: "Цена за 100г",
       serving: 100,
@@ -415,7 +415,7 @@ export const data = {
       id: 74
     },
     {
-      image: "",
+      image: "https://i.ibb.co/0fBzm4S/IMG-4036.jpg",
       name: "Сибас",
       options: "Цена за 100г",
       serving: 100,
@@ -424,7 +424,7 @@ export const data = {
       id: 75
     },
     {
-      image: "",
+      image: "https://i.ibb.co/hBLQshC/IMG-4033.jpg",
       name: "Дорадо",
       options: "Цена за 100г",
       serving: 100,

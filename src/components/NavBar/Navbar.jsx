@@ -5,6 +5,7 @@ import MenuIcon from '../../assets/img/icons/menu.png'
 import DeliveryIcon from '../../assets/img/icons/delivery--v1.png'
 import ContactsIcon from '../../assets/img/icons/apple-contacts.png'
 import CartIcon from '../../assets/img/icons/shopping-cart--v2.png'
+import VacanciesIcon from '../../assets/img/icons/lawyer.png'
 
 const Navbar = ({ toggleMenu }) => {
     return (
@@ -29,6 +30,10 @@ const Navbar = ({ toggleMenu }) => {
           <div className='flex items-center'>
             <img width="20" height="20" className='mr-4' src={CartIcon} alt="shopping-cart--v2"/>
             <NavLink to="/cart" onClick={toggleMenu}>Корзина</NavLink>
+          </div>
+          <div className='flex items-center'>
+            <img width="20" height="20" className='mr-4' src={VacanciesIcon} alt="vacancies"/>
+            <NavLink to="/vacancies" onClick={toggleMenu}>Вакансии</NavLink>
           </div>
           
         </div>
