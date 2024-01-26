@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { clearDishCart, removeDish, decrementDish, incrementDish } from '../../redux/cart-reducer';
+import { clearDishCart, removeDish, decrementDish, incrementDish } from '../../redux/cart-slice';
 import CartItem from './CartItem';
-import Trash from '../../assets/img/trash.svg'
-import CartIcon from '../../assets/img/cart-logo.svg'
+import Trash from '../../assets/img/trash.svg';
+import CartIcon from '../../assets/img/cart-logo.svg';
 
 import axios from 'axios';
 import Order from './Order';
@@ -54,11 +54,19 @@ const Cart = () => {
   };
 
   const footerContent = (
-    <div className='flex justify-between items-center'>
-      <span className='text-sm text-left w-1/2'>В течение 10-ти минут с вами свяжется оператор, для подтверждения заказа.</span>
-      <Button label="Ok" className='py-2 px-4 h-10' icon="pi pi-check" onClick={() => setIsOrderFinish(false)} autoFocus />
+    <div className="flex justify-between items-center">
+      <span className="text-sm text-left w-1/2">
+        В течение 10-ти минут с вами свяжется оператор, для подтверждения заказа.
+      </span>
+      <Button
+        label="Ok"
+        className="py-2 px-4 h-10"
+        icon="pi pi-check"
+        onClick={() => setIsOrderFinish(false)}
+        autoFocus
+      />
     </div>
-);
+  );
 
   const onClickRemoveDish = (dishObj) => {
     dispatch(removeDish(dishObj));
@@ -68,13 +76,13 @@ const Cart = () => {
   };
 
   const onClickMinusDish = (dishObj) => {
-    dispatch(decrementDish(dishObj))
-  }
-  
+    dispatch(decrementDish(dishObj));
+  };
+
   const onClickPlusDish = (dishObj) => {
-    dispatch(incrementDish(dishObj))
-    console.log(items)
-  }
+    dispatch(incrementDish(dishObj));
+    console.log(items);
+  };
 
   const [datetime24h, setDateTime24h] = useState(new Date());
   const shortDate = datetime24h.toLocaleDateString('ru-RU', {
@@ -93,48 +101,69 @@ const Cart = () => {
   const [orderType, setOrderType] = useState('Доставка');
   const ordersCount = Math.floor(Math.random() * 99999999);
 
-  const [orderValues, setOrderValues] = useState({})
+  const [orderValues, setOrderValues] = useState({});
 
-  const sendOrder = async (orderType, address, phoneNumber, comment, dishes, items, countById, totalItems, pay) => {
-    let message = orderType === 'Доставка' ? `
+  const sendOrder = async (
+    orderType,
+    address,
+    phoneNumber,
+    comment,
+    dishes,
+    items,
+    countById,
+    totalItems,
+    pay,
+  ) => {
+    let message =
+      orderType === 'Доставка'
+        ? `
     Заказ # ${ordersCount}
     ${orderType}
     ${dishes.toString()}
     Сумма: ${totalPrice}
     Адрес Доставки: ${address}
     Номер телефона: ${phoneNumber}
-            ${checked ? `
+            ${
+              checked
+                ? `
     Дата доставки: ${shortDate}
-    Время доставки: ${shortTime}` : `
+    Время доставки: ${shortTime}`
+                : `
     Дата доставки: Сегодня
-    Время доставки: Сейчас`}
+    Время доставки: Сейчас`
+            }
     Комментарий: ${comment}
     Способ оплаты: ${pay}
-          ` :
-    `Заказ # ${ordersCount}
+          `
+        : `Заказ # ${ordersCount}
     ${orderType}
     ${dishes.toString()}
     Сумма: ${totalPrice}
     Номер телефона: ${phoneNumber}
-            ${checked ? `
+            ${
+              checked
+                ? `
     Дата доставки: ${shortDate}
-    Время доставки: ${shortTime}` : `
+    Время доставки: ${shortTime}`
+                : `
     Дата доставки: Сегодня
-    Время доставки: Сейчас`}
-          `
+    Время доставки: Сейчас`
+            }
+          `;
     setOrderValues({
       orderType,
-      address, 
-      phoneNumber, 
-      comment, 
+      address,
+      phoneNumber,
+      comment,
       dishes,
       totalPrice,
       items,
-      countById, 
+      countById,
       totalItems,
-      pay
-    })
-    await axios.post(
+      pay,
+    });
+    await axios
+      .post(
         'https://api.telegram.org/bot6449386041:AAGzqG0r-R9AJFcY0EeV0vv6XBjFNDx_7xE/sendMessage',
         {
           chat_id: '-1001929441485',
@@ -151,26 +180,41 @@ const Cart = () => {
   return (
     <div className="pt-6 w-full">
       <h1 className="pl-6 text-title font-bold font-comfortaa">Корзина</h1>
-      <Dialog header="Ваш заказ" visible={visible} position={position} className='w-screen lg:w-[40vw]' onHide={() => setVisible(false)} draggable={false} resizable={false}>
+      <Dialog
+        header="Ваш заказ"
+        visible={visible}
+        position={position}
+        className="w-screen lg:w-[40vw]"
+        onHide={() => setVisible(false)}
+        draggable={false}
+        resizable={false}>
         <Order
-            checked={checked}
-            setChecked={setChecked}
-            setIsOrderFinish={setIsOrderFinish}
-            datetime24h={datetime24h}
-            setDateTime24h={setDateTime24h}
-            setVisible={setVisible}
-            onClickClearCart={onClickClearCart}
-            countById={countById}
-            totalItems={items}
-            items={uniqueProducts}
-            totalCount={totalCount}
-            totalPrice={totalPrice}
-            sendOrder={sendOrder}
-            orderType={orderType}
-            setOrderType={setOrderType}
-          />
+          checked={checked}
+          setChecked={setChecked}
+          setIsOrderFinish={setIsOrderFinish}
+          datetime24h={datetime24h}
+          setDateTime24h={setDateTime24h}
+          setVisible={setVisible}
+          onClickClearCart={onClickClearCart}
+          countById={countById}
+          totalItems={items}
+          items={uniqueProducts}
+          totalCount={totalCount}
+          totalPrice={totalPrice}
+          sendOrder={sendOrder}
+          orderType={orderType}
+          setOrderType={setOrderType}
+        />
       </Dialog>
-      <Dialog header="Спасибо за заказ" visible={isOrderFinish} position={position} className='w-screen lg:w-[40vw]' footer={footerContent}  onHide={() => setIsOrderFinish(false)}  draggable={false} resizable={false}>
+      <Dialog
+        header="Спасибо за заказ"
+        visible={isOrderFinish}
+        position={position}
+        className="w-screen lg:w-[40vw]"
+        footer={footerContent}
+        onHide={() => setIsOrderFinish(false)}
+        draggable={false}
+        resizable={false}>
         <OrderFinish orderValues={orderValues} shortDate={shortDate} shortTime={shortTime} />
       </Dialog>
       <div className="">
@@ -184,14 +228,14 @@ const Cart = () => {
                   let popup = window.confirm('Вы уверены, что хотите очистить корзину?');
                   popup && dispatch(clearDishCart());
                 }}>
-                <img className='text-lightSlate-gray' src={Trash} alt="trash" />
+                <img className="text-lightSlate-gray" src={Trash} alt="trash" />
                 <span>Очистить корзину</span>
               </div>
             </div>
             <div className="px-2 max-h-[40dvh] overflow-y-auto">
               {uniqueProducts.map((item, index) => {
                 const count = countById(items, item.id, item.activeSize);
-                
+
                 return (
                   <CartItem
                     key={index}
@@ -208,16 +252,21 @@ const Cart = () => {
               <div className="fixed bottom-[12%] left-0 w-full flex flex-col justify-between px-6 lg:pl-[20%] transition-all">
                 <span>
                   {' '}
-                  Всего блюд: <b className='font-bold text-lg text-lightSlate-gray'>{totalCount} шт.</b>{' '}
+                  Всего блюд:{' '}
+                  <b className="font-bold text-lg text-lightSlate-gray">{totalCount} шт.</b>{' '}
                 </span>
                 <span>
                   {' '}
-                  Сумма заказа: <b className='text-lightSlate-gray text-lg'>{totalPrice} ₽</b>{' '}
+                  Сумма заказа: <b className="text-lightSlate-gray text-lg">{totalPrice} ₽</b>{' '}
                 </span>
               </div>
               <div className="">
                 <div className="">
-                <Button className='px-4 py-2 bg-lightSlate-gray rounded-md fixed bottom-main-btn left-6 lg:left-[20%]' onClick={() => show('bottom')} label='Оформить заказ' />
+                  <Button
+                    className="px-4 py-2 bg-lightSlate-gray rounded-md fixed bottom-main-btn left-6 lg:left-[20%]"
+                    onClick={() => show('bottom')}
+                    label="Оформить заказ"
+                  />
                 </div>
               </div>
             </div>
@@ -225,14 +274,17 @@ const Cart = () => {
         ) : (
           // Если корзина пустая
           <div className="px-6 pt-6 w-full flex flex-col items-center justify-around">
-            <h2 className='mb-6 self-start'>Корзина пустая</h2>
-            <img src={CartIcon} className='opacity-50 w-1/2' alt="cart" />
-            <span className='mt-6'>
+            <h2 className="mb-6 self-start">Корзина пустая</h2>
+            <img src={CartIcon} className="opacity-50 w-1/2" alt="cart" />
+            <span className="mt-6">
               Вероятней всего, вы еще ничего не заказали. Для того, чтобы сделать заказ, перейди на
               страницу меню.
             </span>
             <NavLink to="/menu" className="">
-              <Button className='px-4 py-2 bg-lightSlate-gray rounded-md fixed bottom-main-btn left-6 lg:left-[20%]' label='Вернуться назад' />
+              <Button
+                className="px-4 py-2 bg-lightSlate-gray rounded-md fixed bottom-main-btn left-6 lg:left-[20%]"
+                label="Вернуться назад"
+              />
             </NavLink>
           </div>
         )}

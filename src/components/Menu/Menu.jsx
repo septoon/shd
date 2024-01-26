@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 import cartIcon from '../../assets/img/shopping-cart.svg';
-import MenuItem from "./MenuItem";
-import { addDishToCart } from "../../redux/cart-reducer";
-import { toggleIsActive } from "../../redux/catalog-reducer";
+import MenuItem from './MenuItem';
+import { addDishToCart } from '../../redux/cart-slice';
+import { toggleIsActive } from '../../redux/catalog-slice';
 
 const Menu = ({ item, catalogName }) => {
   const dispatch = useDispatch();
@@ -39,8 +39,7 @@ const Menu = ({ item, catalogName }) => {
       {items.length > 0 && (
         <NavLink
           to="/cart"
-          className="w-auto h-10 px-2 flex justify-around items-center animate-pulse rounded-md text-white bg-lightSlate-gray shadow-xl bg-cover bg-center fixed bottom-main-btn left-6"
-        >
+          className="w-auto h-10 px-2 flex justify-around items-center animate-pulse rounded-md text-white bg-lightSlate-gray shadow-xl bg-cover bg-center fixed bottom-main-btn left-6">
           <span className="text-white font-bold">{totalCount}</span>
           <img className="h-6 mx-2" src={cartIcon} alt="icon" />
           <span className="font-bold">{totalPrice} ₽</span>

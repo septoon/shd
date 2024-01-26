@@ -59,7 +59,7 @@ function App() {
 
           <Routes>
             <Route exact path="/shd" element={<Main />} />
-            <Route exact path="/menu-items" element={<MenuCards setItem={setItem} isItemsOpen={isItemsOpen} getCatalogName={getCatalogName} toggleMenuItems={toggleMenuItems} data={data} />} />
+            <Route path="/menu-items" element={<MenuCards setItem={setItem} isItemsOpen={isItemsOpen} getCatalogName={getCatalogName} toggleMenuItems={toggleMenuItems} data={data} />} />
             <Route path="/menu" element={<Menu item={item} catalogName={catalogName} />} />
             <Route path="/delivery" element={<Delivery />} />
             <Route path="/contacts" element={<Contacts />} />
