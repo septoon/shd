@@ -141,13 +141,20 @@ const Order = ({
             })}
           </div>
           <div className="flex flex-col">
-            <span className="mb-2">
-              На сумму: <b className="text-lightSlate-gray">{totalPrice < 1000 && orderType === 'Доставка' ? totalPrice + 200 : totalPrice}</b> ₽
-            </span>
             {
               totalPrice < 1000 && orderType === 'Доставка' ? (
-                <span className='mb-6 text-[12px]'>Включая доставку <b className="text-lightSlate-gray">200</b> ₽</span>
-              ) : (<span className='mb-4'></span>)
+                <>
+                  <span className="mb-2  text-[12px]">
+                    Стоимость товаров: <b className="text-lightSlate-gray">{totalPrice}</b> ₽
+                  </span>
+                  <span className='mb-2 text-[12px]'>Стоимость доставки: <b className="text-lightSlate-gray">200</b> ₽</span>
+                  <span className='mb-6'>Итого: <b className="text-lightSlate-gray">{totalPrice + 200}</b> ₽</span>
+                </>
+              ) : (
+                <span className="mb-6">
+                  Итого: <b className="text-lightSlate-gray">{totalPrice < 1000 && orderType === 'Доставка' ? totalPrice + 200 : totalPrice}</b> ₽
+                </span>
+                )
             }
             
             <div className="flex-auto w-auto">
